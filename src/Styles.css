@@ -1,0 +1,32 @@
+/* 
+---------------- Navbar Component -----------------
+*/
+
+
+/* MDB Navbar Starts */
+.right{
+    margin-left: auto;
+}
+.nav-option{
+    font-family: 'Lexend Deca', sans-serif;
+}
+strong#nav-brand{
+    letter-spacing: 0.05em;
+    font-family: 'Anton', sans-serif;
+}
+/* MDB Navbar Ends */
+
+/* MDB Carousel Captions Starts */
+.caption-header{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 70px;
+    letter-spacing: -0.01em;
+}
+.caption-sub-header{
+
+}
+.caption-content{
+
+}
+/* MDB Carousel Captions Ends */
