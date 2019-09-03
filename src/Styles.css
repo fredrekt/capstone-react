@@ -29,4 +29,63 @@ strong#nav-brand{
 .caption-content{
 
 }
+.guide-h{
+    font-size: 80px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
 /* MDB Carousel Captions Ends */
+
+/*
+------------ Jumbotron Component ----------
+*/
+
+/* MDB Jumbotron Caption Starts */
+.j-header{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+}
+.j-content{
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* MDB Jumbotron Caption Ends */
+
+/*
+------------ Features Component ----------- 
+*/
+/* MDB Features Starts */
+.f-header{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 4%;
+}
+/* MDB Features Ends */
+
+/*
+-----------FeaturedItems Component --------
+*/
+/* FeaturedItems Starts  */
+.fi-header{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+.fi-med-header{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+.item-header{
+    font-family: 'Roboto', sans-serif;
+}
+/* FeaturedItems Ends */

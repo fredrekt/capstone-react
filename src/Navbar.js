@@ -5,7 +5,7 @@ import './Styles.css'
 import car1 from './img/bg-2.jpeg'
 import car2 from './img/item3.jpg'
 import car3 from './img/bg-3.jpeg'
-import Carousel from './Carousel';
+import { MDBBtn } from "mdbreact";
 
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem } from
 "mdbreact";
@@ -31,7 +31,7 @@ class Navbar extends React.Component {
       <div>
         <header>
           <Router>
-            <MDBNavbar color="elega" fixed="top" dark expand="md" scrolling transparent>
+            <MDBNavbar color="eleg" fixed="top" dark expand="md" scrolling transparent>
               <MDBNavbarBrand href="/">
                 <strong id="nav-brand">Medishop</strong>
               </MDBNavbarBrand>
@@ -70,6 +70,7 @@ class Navbar extends React.Component {
               <h2 className="caption-header">Medicines </h2>
               <h5>It keeps us alive and be there for our loved ones.</h5>
               <p>Software that helps everyone to be healthy and make things easier.</p>
+                <MDBBtn outline size="lg" className="mt-3" color="white">Get Started</MDBBtn>
             </MDBMask>
           </MDBView>
           </MDBCarouselItem>
@@ -80,11 +81,14 @@ class Navbar extends React.Component {
                 src={car1}
                 alt="Second slide"
               />
-              <MDBMask overlay="black-light" className="flex-center flex-column text-white text-center">
-                  <h2 className="caption-header">Life is Gold</h2>
-                  <h4>Every air that you breathe is precious.</h4>
+              <MDBMask overlay="black-strong" className="flex-center flex-column text-white text-center">
+                  <h2 className="caption-header">Where Lives &<br/> Medicines Matter</h2>
+                  <h4>Essential to humanity's survival.</h4>
                   <p>God gave us life, therefore do not waste life. Preserve it!</p>
-
+                  <div className="d-flex justify-content-center">
+                    <div className="p-2 text-left"><MDBBtn size="lg" className="mt-3" outline color="white">Read More</MDBBtn></div>
+                    <div className="p-2 text-left"><MDBBtn size="lg" className="mt-3" outline color="white">Contact Us</MDBBtn></div>
+                  </div>
               </MDBMask>
             </MDBView>
           </MDBCarouselItem>
@@ -96,23 +100,15 @@ class Navbar extends React.Component {
                 alt="Third slide"
               />
               <MDBMask overlay="black-strong" className="flex-center flex-column text-white text-center">
-                <h2>Sample Text Header</h2>
-                <h4>Second Text</h4>
-                <p>Lorem ipsum dolor wasd alrem sads, sfedred fredirckjohn garingo is a great goat.</p>
+                <h2 className="caption-header"><span className="guide-h">Guiding you</span><br/>every step of the way</h2>
+                <h4>Reliable. Effecient. Easy To Use</h4>
+                <p>This Software is designed to help you live a healthy life.</p>
               </MDBMask>
             </MDBView>
           </MDBCarouselItem>
           </MDBCarouselInner>
-          </MDBCarousel>
-        
-          
+          </MDBCarousel>        
         </header>
-
-        <main>
-          <MDBContainer className="text-center my-5">
-            <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </MDBContainer>
-        </main>
       </div>
     );
   }
