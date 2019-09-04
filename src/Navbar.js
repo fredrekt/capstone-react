@@ -1,6 +1,5 @@
 import React from 'react';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
-import { BrowserRouter as Router } from 'react-router-dom';
 import './Styles.css'
 import car1 from './img/bg-2.jpeg'
 import car2 from './img/item3.jpg'
@@ -9,6 +8,9 @@ import { MDBBtn } from "mdbreact";
 
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem } from
 "mdbreact";
+
+import HomeComponent from './components/HomeComponent'
+import AboutComponent from './components/AboutComponent'
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -30,7 +32,6 @@ class Navbar extends React.Component {
     return (
       <div>
         <header>
-          <Router>
             <MDBNavbar color="eleg" fixed="top" dark expand="md" scrolling transparent>
               <MDBNavbarBrand href="/">
                 <strong id="nav-brand">Medishop</strong>
@@ -40,22 +41,21 @@ class Navbar extends React.Component {
                 <MDBNavbarNav right>
                     {/* <div className="right"> */}
                   <MDBNavItem active>
-                    <MDBNavLink className="nav-option" to="#">Home</MDBNavLink>
+                    <MDBNavLink className="nav-option" to="/">Home</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink className="nav-option" to="#">About</MDBNavLink>
+                    <MDBNavLink className="nav-option" to="/about">About</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink className="nav-option" to="#">Medicines</MDBNavLink>
+                    <MDBNavLink className="nav-option" to="/medicines">Medicines</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink className="nav-option" to="#">Contact</MDBNavLink>
+                    <MDBNavLink className="nav-option" to="/contact">Contact</MDBNavLink>
                   </MDBNavItem>
                   {/* </div> */}
                 </MDBNavbarNav>
               </MDBCollapse>
             </MDBNavbar>
-          </Router>
           <MDBCarousel
             activeItem={1}
             length={3}
