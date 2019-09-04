@@ -3,16 +3,18 @@ import About from './About'
 import Navbar from '../Navbar'
 import Team from './Team'
 import Use from './Use'
-import TestimonialsMultiPage from './ProjectTools'
+import ProjectTools from './ProjectTools'
+import Breadcrumb from './Breadcrumb'
 
 
 class AboutComponent extends Component{
     render(){
         return(
             <div>
+               <Breadcrumb bheader="About Us" bcurrent="About"/>
                <About/>
                <Use/>
-               <TestimonialsMultiPage/>
+               <ProjectTools/>
                <Team/>
                
             </div>
