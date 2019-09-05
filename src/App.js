@@ -9,6 +9,7 @@ import ContactComponent from './components/ContactComponent'
 import About from './components/About'
 import Login from './components/Login'
 import Register from './components/Register'
+import Medicines from './components/Medicines'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/contact" component={ContactComponent}/>
             <Route path="/sign-in" component={Login}/>
             <Route path="/sign-up" component={Register}/>
+            <Route path="/medicines-shop" component={Medicines}/>
           </Switch>
         <Footer/>
       </div>
