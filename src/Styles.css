@@ -325,3 +325,33 @@ strong#nav-brand{
     font-weight: light; 
 }
 /* Register Component Ends */
+
+/*
+------------- Medicines Shop Component ---------
+*/
+
+/* Medicines Component Starts */
+.otc-header{
+    font-size: 90px;
+    text-transform: uppercase;
+}
+.med-container{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.med-otc-h{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold; 
+    font-size: 50px;
+    margin-bottom: 5%;
+}
+.med-otc-h-2{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold; 
+    font-size: 50px;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+/* Medicines Component Ends */
