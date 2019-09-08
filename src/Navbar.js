@@ -50,6 +50,15 @@ class Navbar extends React.Component {
                     <MDBNavLink className="nav-option" to="/contact">Contact</MDBNavLink>
                   </MDBNavItem>
                   {/* </div> */}
+                  <MDBNavItem>
+                    <MDBNavLink hidden className="nav-option" to="/sign-in">Login</MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink hidden className="nav-option" to="/sign-up">Register</MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem>
+                    <MDBNavLink hidden className="nav-option" to="/sign-in">Logout</MDBNavLink>
+                  </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>
             </MDBNavbar>
