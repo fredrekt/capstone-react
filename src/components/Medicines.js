@@ -73,6 +73,7 @@ class Medicines extends Component{
                     <MDBContainer>
                         <MDBRow>
                             <MDBCol>
+                                <a className="meds-card-link" to="/meds/item">
                                 <MDBCard>
                                     <MDBCardImage className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
@@ -94,6 +95,7 @@ class Medicines extends Component{
                                     </MDBCardText>
                                     </MDBCardBody>
                                 </MDBCard>
+                                </a>
                             </MDBCol>
                             <MDBCol>
                                 <MDBCard>
