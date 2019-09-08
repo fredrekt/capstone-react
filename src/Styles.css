@@ -357,4 +357,65 @@ strong#nav-brand{
     margin-bottom: 5%;
     margin-top: 5%;
 }
+.med-item-header{
+    font-family: 'Roboto', sans-serif;
+    font-style: bold;
+    font-size: 30px;
+    text-align: center;
+}
+.med-sub-h{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+.prizeandlogo-container{
+    margin-top: -5%;
+}
+.med-content-container{
+    margin-top: -5%;
+}
+.med-price{
+    font-family: 'Roboto', sans-serif;
+    font-size:20px;   
+}
+.icon-ph-flag{
+    width: 10%;
+    height: 10%;
+    margin-top: -2%;
+}
 /* Medicines Component Ends */
+
+/* Medicine Item Component Starts */
+.section-medicine-item{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.med-item-name{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold; 
+    font-size: 50px;
+}
+.med-prod-info{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold; 
+    font-size: 30px;
+    margin-top: 10%;
+}
+.med-option-container{
+    margin-top: 2%;
+    margin-left: 32%;
+    height: 15%;
+    width:15%;
+}
+.med-option-container-2{
+    margin-top: 2%;
+    margin-left: 2%;
+    height: 15%;
+    width:15%;
+}
+.btn-cart{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-style: bold;
+    width:90%; 
+}
+/* Medicine Item Component Ends */
