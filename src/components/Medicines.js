@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import Breadcrumb from './Breadcrumb';
-import { MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBRow, MDBCol ,MDBBtn, MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
+import { MDBIcon, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBRow, MDBCol ,MDBBtn, MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
 "mdbreact";
 import Carousel from './Carousel';
 import car1 from '../img/med-car-1.jpeg'
 import car2 from '../img/med-car-2.jpeg'
 import car3 from '../img/med-car-3.jpeg'
 import medsample from '../img/meds-sample-pic.jpeg'
+import phlogo from '../img/ph-flag.png'
+import biogesic from '../img/meds-bio.jpeg'
 
 class Medicines extends Component{
     render(){
@@ -72,14 +74,24 @@ class Medicines extends Component{
                         <MDBRow>
                             <MDBCol>
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
+                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
-                                    <MDBCardTitle>Medicine Name</MDBCardTitle>
+                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
-                                        Some quick example text to build on the card title and make
-                                        up the bulk of the card&apos;s content.
+                                        <div className="med-content-container">
+                                            <div className="grey-text text-center">
+                                            <p className="med-sub-h">
+                                                <MDBIcon icon="tags" />
+                                                    Neozep Forte
+                                                </p>
+                                            </div>
+                                            <div className="prizeandlogo-container">
+                                                <div className="black-text text-center">
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                </div>    
+                                            </div>
+                                        </div>
                                     </MDBCardText>
-                                    <MDBBtn color="primary" href="#">Add to Cart</MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
                             </MDBCol>
