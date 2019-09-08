@@ -1,6 +1,6 @@
 import React from "react";
 import Breadcrumb from './Breadcrumb'
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody, MDBIcon } from 'mdbreact';
 
 const Login = () => {
   return (
@@ -39,10 +39,21 @@ const Login = () => {
                         validate
                     />
                     <a className="login-pass-forgot" href="login/forgot-password">Forgot Password</a>
-                    </div>
+                    </div>                    
                     <div className="text-center py-4 mt-3">
                     <MDBBtn className="login-bbn-f" style={{'font-weight':'bold','letter-spacing':'0.02em'}} color="primary" type="submit">
                         Login
+                    </MDBBtn>
+                    <div hidden class="spinner-border text-info">
+                        <span class="sr-only"></span>
+                    </div>
+                    <MDBBtn className="login-bbn-f" style={{'font-weight':'bold','letter-spacing':'0.02em'}} color="danger" type="submit">
+                        <MDBIcon
+                        fab
+                        icon="google"
+                        className="icon-m"
+                        ></MDBIcon>
+                        Sign In with google
                     </MDBBtn>
                     </div>
                 </form>
