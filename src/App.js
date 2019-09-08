@@ -10,6 +10,7 @@ import About from './components/About'
 import Login from './components/Login'
 import Register from './components/Register'
 import Medicines from './components/Medicines'
+import MedicineItem from './components/MedicineItem';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/sign-in" component={Login}/>
             <Route path="/sign-up" component={Register}/>
             <Route path="/medicines-shop" component={Medicines}/>
+            <Route path="/meds/item" component={MedicineItem}/>
           </Switch>
         <Footer/>
       </div>
