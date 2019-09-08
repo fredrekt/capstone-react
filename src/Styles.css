@@ -310,6 +310,9 @@ strong#nav-brand{
 .login-pass-forgot:hover{
     text-decoration: none;
 }
+.icon-m{
+    margin-right: 2%;
+}
 /* Login Component Ends */
 
 /* Register Component Starts */
