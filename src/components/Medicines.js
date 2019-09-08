@@ -6,6 +6,7 @@ import Carousel from './Carousel';
 import car1 from '../img/med-car-1.jpeg'
 import car2 from '../img/med-car-2.jpeg'
 import car3 from '../img/med-car-3.jpeg'
+import medsample from '../img/meds-sample-pic.jpeg'
 
 class Medicines extends Component{
     render(){
