@@ -382,6 +382,13 @@ strong#nav-brand{
     height: 10%;
     margin-top: -2%;
 }
+.meds-card-link{
+    color: black;
+}
+.meds-card-link:hover{
+    text-decoration: none;
+    color: black;
+}
 /* Medicines Component Ends */
 
 /* Medicine Item Component Starts */
