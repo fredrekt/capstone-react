@@ -4,7 +4,11 @@ import fi1 from '../img/fi-med-1.jpeg'
 import fi2 from '../img/fi-med-2.jpeg'
 import fi3 from '../img/fi-med-3.jpeg'
 import fi4 from '../img/fi-med-4.jpeg'
-
+import phlogo from '../img/ph-flag.png'
+import biogesic from '../img/meds-bio.jpeg'
+import biogesic2 from '../img/meds-sample-pic-2.jpeg'
+import biogesic3 from '../img/meds-sample-pic-3.jpeg'
+import biogesic4 from '../img/meds-sample-pic-4.jpeg'
 
 class FeaturedItems extends Component{
   render(){
@@ -19,56 +23,104 @@ class FeaturedItems extends Component{
           </p>
           <MDBRow>
             <MDBCol>
-            <MDBCard>
-              <MDBCardImage className="img-fluid" src={fi1} waves />
-              <MDBCardBody>
-                <MDBCardTitle>Biogesic</MDBCardTitle>
-                <MDBCardText>
-                  Some quick example text to build on the card title and make
-                  up the bulk of the card&apos;s content.
-                </MDBCardText>
-                <MDBBtn outline color="primary" href="#">add to cart</MDBBtn>
-              </MDBCardBody>
-            </MDBCard>
+            <a className="meds-card-link" href="/meds/item">
+                                <MDBCard>
+                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
+                                    <MDBCardBody>
+                                    <MDBCardTitle><h3 className="med-item-header">Biogesic</h3></MDBCardTitle>
+                                    <MDBCardText>
+                                        <div className="med-content-container">
+                                            <div className="grey-text text-center">
+                                            <p className="med-sub-h">
+                                                <MDBIcon icon="tags" />
+                                                    Biogesic
+                                                </p>
+                                            </div>
+                                            <div className="prizeandlogo-container">
+                                                <div className="black-text text-center">
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 6.00</h4> 
+                                                </div>    
+                                            </div>
+                                        </div>
+                                    </MDBCardText>
+                                    </MDBCardBody>
+                                </MDBCard>
+                                </a>
             </MDBCol>
             <MDBCol>
-            <MDBCard>
-              <MDBCardImage className="img-fluid" src={fi2} waves />
-              <MDBCardBody>
-                <MDBCardTitle>Bioflu</MDBCardTitle>
-                <MDBCardText>
-                  Some quick example text to build on the card title and make
-                  up the bulk of the card&apos;s content.
-                </MDBCardText>
-                <MDBBtn color="primary" outline href="#">Add to cart</MDBBtn>
-              </MDBCardBody>
-            </MDBCard>
+            <a className="meds-card-link" href="/meds/item">
+                                <MDBCard>
+                                    <MDBCardImage className="img-fluid" src={biogesic2} waves />
+                                    <MDBCardBody>
+                                    <MDBCardTitle><h3 className="med-item-header">Enervon</h3></MDBCardTitle>
+                                    <MDBCardText>
+                                        <div className="med-content-container">
+                                            <div className="grey-text text-center">
+                                            <p className="med-sub-h">
+                                                <MDBIcon icon="tags" />
+                                                    Enervon
+                                                </p>
+                                            </div>
+                                            <div className="prizeandlogo-container">
+                                                <div className="black-text text-center">
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                </div>    
+                                            </div>
+                                        </div>
+                                    </MDBCardText>
+                                    </MDBCardBody>
+                                </MDBCard>
+                                </a>
             </MDBCol>
             <MDBCol>
-            <MDBCard>
-              <MDBCardImage className="img-fluid" src={fi3} waves />
-              <MDBCardBody>
-                <MDBCardTitle>Analgesic</MDBCardTitle>
-                <MDBCardText>
-                  Some quick example text to build on the card title and make
-                  up the bulk of the card&apos;s content.
-                </MDBCardText>
-                <MDBBtn outline color="primary" href="#">Add to cart</MDBBtn>
-              </MDBCardBody>
-            </MDBCard>
+            <a className="meds-card-link" href="/meds/item">
+                                <MDBCard>
+                                    <MDBCardImage className="img-fluid" src={biogesic3} waves />
+                                    <MDBCardBody>
+                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
+                                    <MDBCardText>
+                                        <div className="med-content-container">
+                                            <div className="grey-text text-center">
+                                            <p className="med-sub-h">
+                                                <MDBIcon icon="tags" />
+                                                    Neozep Forte
+                                                </p>
+                                            </div>
+                                            <div className="prizeandlogo-container">
+                                                <div className="black-text text-center">
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                </div>    
+                                            </div>
+                                        </div>
+                                    </MDBCardText>
+                                    </MDBCardBody>
+                                </MDBCard>
+                                </a>
             </MDBCol>
             <MDBCol>
-            <MDBCard>
-              <MDBCardImage className="img-fluid" src={fi4} waves />
-              <MDBCardBody>
-                <MDBCardTitle>Cheriffer</MDBCardTitle>
-                <MDBCardText>
-                  Some quick example text to build on the card title and make
-                  up the bulk of the card&apos;s content.
-                </MDBCardText>
-                <MDBBtn outline color="primary" href="#">Add to Cart</MDBBtn>
-              </MDBCardBody>
-            </MDBCard>
+            <a className="meds-card-link" href="/meds/item">
+                                <MDBCard>
+                                    <MDBCardImage className="img-fluid" src={biogesic4} waves />
+                                    <MDBCardBody>
+                                    <MDBCardTitle><h3 className="med-item-header">Alaxan</h3></MDBCardTitle>
+                                    <MDBCardText>
+                                        <div className="med-content-container">
+                                            <div className="grey-text text-center">
+                                            <p className="med-sub-h">
+                                                <MDBIcon icon="tags" />
+                                                    Alaxan Fr
+                                                </p>
+                                            </div>
+                                            <div className="prizeandlogo-container">
+                                                <div className="black-text text-center">
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                </div>    
+                                            </div>
+                                        </div>
+                                    </MDBCardText>
+                                    </MDBCardBody>
+                                </MDBCard>
+                                </a>
             </MDBCol>
           </MDBRow>
 
