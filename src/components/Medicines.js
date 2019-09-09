@@ -9,6 +9,7 @@ import car3 from '../img/med-car-3.jpeg'
 import medsample from '../img/meds-sample-pic.jpeg'
 import phlogo from '../img/ph-flag.png'
 import biogesic from '../img/meds-bio.jpeg'
+// import { Link } from 'react-router-dom'
 
 class Medicines extends Component{
     render(){
@@ -73,7 +74,7 @@ class Medicines extends Component{
                     <MDBContainer>
                         <MDBRow>
                             <MDBCol>
-                                <a className="meds-card-link" to="/meds/item">
+                                <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
                                     <MDBCardImage className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
