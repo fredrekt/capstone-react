@@ -24,30 +24,35 @@ class Navbar extends React.Component {
       collapse: !this.state.collapse,
     });
   }
+  handleScroll(){
+    this.setState({
+      color:'black',
+    });
+  }
 
   render() {
     return (
       <div>
         <header>
-            <MDBNavbar color="eleg" fixed="top" dark expand="md" scrolling transparent>
+            <MDBNavbar color="black" fixed="top" expand="md" scrolling dark transparent>
               <MDBNavbarBrand href="/">
-                <strong id="nav-brand">Medishop</strong>
+                <strong style={{'color':'this.state.color'}} id="nav-brand">Medishop</strong>
               </MDBNavbarBrand>
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar>
                 <MDBNavbarNav right>
                     {/* <div className="right"> */}
                   <MDBNavItem active>
-                    <MDBNavLink className="nav-option" to="/">Home</MDBNavLink>
+                    <MDBNavLink style={{'color':'this.state.color'}} className="nav-option" to="/">Home</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink className="nav-option" to="/about">About</MDBNavLink>
+                    <MDBNavLink style={{'color':'this.state.color'}} className="nav-option" to="/about">About</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink className="nav-option" to="/medicines">Medicines</MDBNavLink>
+                    <MDBNavLink style={{'color':'this.state.color'}} className="nav-option" to="/medicines">Medicines</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink className="nav-option" to="/contact">Contact</MDBNavLink>
+                    <MDBNavLink style={{'color':'this.state.color'}} className="nav-option" to="/contact">Contact</MDBNavLink>
                   </MDBNavItem>
                   {/* </div> */}
                   <MDBNavItem>
