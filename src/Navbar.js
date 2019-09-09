@@ -29,27 +29,27 @@ class Navbar extends React.Component {
       color:'black',
     });
   }
-  state = {
-    color: 'white'
-  }
+  // state = {
+  //   color: 'white'
+  // }
 
-  listenScrollEvent = e => {
-    if (window.scrollY > 500) {
-      this.setState({color: 'black'})
-    } else {
-      this.setState({color: 'white'})
-    }
-  }
+  // listenScrollEvent = e => {
+  //   if (window.scrollY > 500) {
+  //     this.setState({color: 'black'})
+  //   } else {
+  //     this.setState({color: 'white'})
+  //   }
+  // }
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.listenScrollEvent)
-  }
+  // componentDidMount() {
+  //   window.addEventListener('scroll', this.listenScrollEvent)
+  // }
 
   render() {
     return (
       <div>
         <header>
-            <MDBNavbar color="eleg" fixed="top" expand="md" scrolling dark transparent>
+            <MDBNavbar color="elegant-color" fixed="top" expand="md" scrolling dark transparent>
               <MDBNavbarBrand href="/">
                 <strong style={{color:this.state.color}} id="nav-brand">Medishop</strong>
               </MDBNavbarBrand>
