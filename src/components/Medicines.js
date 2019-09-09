@@ -9,7 +9,7 @@ import car3 from '../img/med-car-3.jpeg'
 import medsample from '../img/meds-sample-pic.jpeg'
 import phlogo from '../img/ph-flag.png'
 import biogesic from '../img/meds-bio.jpeg'
-// import { Link } from 'react-router-dom'
+
 
 class Medicines extends Component{
     render(){
@@ -29,7 +29,7 @@ class Medicines extends Component{
                     <h2 className="caption-header"> <span className="otc-header">OTC</span> <br/>Collection </h2>
                     <h5>Pharmaceutical Drugs sold "over the counter" in all pharmacies.</h5>
                     <p>Drugs that do not need a doctor's prescription.</p>
-                        <MDBBtn outline size="lg" className="mt-3" color="white">See Collection</MDBBtn>
+                        <MDBBtn href="#OTC-section" outline size="lg" className="mt-3" color="white">See Collection</MDBBtn>
                     </MDBMask>
                 </MDBView>
                 </MDBCarouselItem>
@@ -99,100 +99,185 @@ class Medicines extends Component{
                                 </a>
                             </MDBCol>
                             <MDBCol>
+                            <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
+                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
-                                    <MDBCardTitle>Medicine Name</MDBCardTitle>
+                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
-                                        Some quick example text to build on the card title and make
-                                        up the bulk of the card&apos;s content.
+                                        <div className="med-content-container">
+                                            <div className="grey-text text-center">
+                                            <p className="med-sub-h">
+                                                <MDBIcon icon="tags" />
+                                                    Neozep Forte
+                                                </p>
+                                            </div>
+                                            <div className="prizeandlogo-container">
+                                                <div className="black-text text-center">
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                </div>    
+                                            </div>
+                                        </div>
                                     </MDBCardText>
-                                    <MDBBtn color="primary" href="#">Add to Cart</MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
+                                </a>
                             </MDBCol>
                             <MDBCol>
+                            <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
+                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
-                                    <MDBCardTitle>Medicine Name</MDBCardTitle>
+                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
-                                        Some quick example text to build on the card title and make
-                                        up the bulk of the card&apos;s content.
+                                        <div className="med-content-container">
+                                            <div className="grey-text text-center">
+                                            <p className="med-sub-h">
+                                                <MDBIcon icon="tags" />
+                                                    Neozep Forte
+                                                </p>
+                                            </div>
+                                            <div className="prizeandlogo-container">
+                                                <div className="black-text text-center">
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                </div>    
+                                            </div>
+                                        </div>
                                     </MDBCardText>
-                                    <MDBBtn color="primary" href="#">Add to Cart</MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
+                                </a>
                             </MDBCol>
                             <MDBCol>
+                            <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
+                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
-                                    <MDBCardTitle>Medicine Name</MDBCardTitle>
+                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
-                                        Some quick example text to build on the Medicine Name and make
-                                        up the bulk of the card&apos;s content.
+                                        <div className="med-content-container">
+                                            <div className="grey-text text-center">
+                                            <p className="med-sub-h">
+                                                <MDBIcon icon="tags" />
+                                                    Neozep Forte
+                                                </p>
+                                            </div>
+                                            <div className="prizeandlogo-container">
+                                                <div className="black-text text-center">
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                </div>    
+                                            </div>
+                                        </div>
                                     </MDBCardText>
-                                    <MDBBtn color="primary" href="#">Add to Cart</MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
+                                </a>
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
+                 
                     <h1 className="med-otc-h-2">Herbal Collection</h1>
                     <MDBContainer>
                         <MDBRow>
                             <MDBCol>
+                            <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
+                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
-                                    <MDBCardTitle>Medicine Name</MDBCardTitle>
+                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
-                                        Some quick example text to build on the card title and make
-                                        up the bulk of the card&apos;s content.
+                                        <div className="med-content-container">
+                                            <div className="grey-text text-center">
+                                            <p className="med-sub-h">
+                                                <MDBIcon icon="tags" />
+                                                    Neozep Forte
+                                                </p>
+                                            </div>
+                                            <div className="prizeandlogo-container">
+                                                <div className="black-text text-center">
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                </div>    
+                                            </div>
+                                        </div>
                                     </MDBCardText>
-                                    <MDBBtn color="primary" href="#">Add to Cart</MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
+                                </a>
                             </MDBCol>
                             <MDBCol>
+                            <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
+                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
-                                    <MDBCardTitle>Medicine Name</MDBCardTitle>
+                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
-                                        Some quick example text to build on the card title and make
-                                        up the bulk of the card&apos;s content.
+                                        <div className="med-content-container">
+                                            <div className="grey-text text-center">
+                                            <p className="med-sub-h">
+                                                <MDBIcon icon="tags" />
+                                                    Neozep Forte
+                                                </p>
+                                            </div>
+                                            <div className="prizeandlogo-container">
+                                                <div className="black-text text-center">
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                </div>    
+                                            </div>
+                                        </div>
                                     </MDBCardText>
-                                    <MDBBtn color="primary" href="#">Add to Cart</MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
+                                </a>
                             </MDBCol>
                             <MDBCol>
+                            <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
+                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
-                                    <MDBCardTitle>Medicine Name</MDBCardTitle>
+                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
-                                        Some quick example text to build on the card title and make
-                                        up the bulk of the card&apos;s content.
+                                        <div className="med-content-container">
+                                            <div className="grey-text text-center">
+                                            <p className="med-sub-h">
+                                                <MDBIcon icon="tags" />
+                                                    Neozep Forte
+                                                </p>
+                                            </div>
+                                            <div className="prizeandlogo-container">
+                                                <div className="black-text text-center">
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                </div>    
+                                            </div>
+                                        </div>
                                     </MDBCardText>
-                                    <MDBBtn color="primary" href="#">Add to Cart</MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
+                                </a>
                             </MDBCol>
                             <MDBCol>
+                            <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
+                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
-                                    <MDBCardTitle>Medicine Name</MDBCardTitle>
+                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
-                                        Some quick example text to build on the Medicine Name and make
-                                        up the bulk of the card&apos;s content.
+                                        <div className="med-content-container">
+                                            <div className="grey-text text-center">
+                                            <p className="med-sub-h">
+                                                <MDBIcon icon="tags" />
+                                                    Neozep Forte
+                                                </p>
+                                            </div>
+                                            <div className="prizeandlogo-container">
+                                                <div className="black-text text-center">
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                </div>    
+                                            </div>
+                                        </div>
                                     </MDBCardText>
-                                    <MDBBtn color="primary" href="#">Add to Cart</MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
+                                </a>
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
@@ -200,61 +285,110 @@ class Medicines extends Component{
                     <MDBContainer>
                         <MDBRow>
                             <MDBCol>
+                            <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
+                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
-                                    <MDBCardTitle>Medicine Name</MDBCardTitle>
+                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
-                                        Some quick example text to build on the card title and make
-                                        up the bulk of the card&apos;s content.
+                                        <div className="med-content-container">
+                                            <div className="grey-text text-center">
+                                            <p className="med-sub-h">
+                                                <MDBIcon icon="tags" />
+                                                    Neozep Forte
+                                                </p>
+                                            </div>
+                                            <div className="prizeandlogo-container">
+                                                <div className="black-text text-center">
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                </div>    
+                                            </div>
+                                        </div>
                                     </MDBCardText>
-                                    <MDBBtn color="primary" href="#">Add to Cart</MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
+                                </a>
                             </MDBCol>
                             <MDBCol>
+                            <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
+                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
-                                    <MDBCardTitle>Medicine Name</MDBCardTitle>
+                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
-                                        Some quick example text to build on the card title and make
-                                        up the bulk of the card&apos;s content.
+                                        <div className="med-content-container">
+                                            <div className="grey-text text-center">
+                                            <p className="med-sub-h">
+                                                <MDBIcon icon="tags" />
+                                                    Neozep Forte
+                                                </p>
+                                            </div>
+                                            <div className="prizeandlogo-container">
+                                                <div className="black-text text-center">
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                </div>    
+                                            </div>
+                                        </div>
                                     </MDBCardText>
-                                    <MDBBtn color="primary" href="#">Add to Cart</MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
+                                </a>
                             </MDBCol>
                             <MDBCol>
+                            <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
+                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
-                                    <MDBCardTitle>Medicine Name</MDBCardTitle>
+                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
-                                        Some quick example text to build on the card title and make
-                                        up the bulk of the card&apos;s content.
+                                        <div className="med-content-container">
+                                            <div className="grey-text text-center">
+                                            <p className="med-sub-h">
+                                                <MDBIcon icon="tags" />
+                                                    Neozep Forte
+                                                </p>
+                                            </div>
+                                            <div className="prizeandlogo-container">
+                                                <div className="black-text text-center">
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                </div>    
+                                            </div>
+                                        </div>
                                     </MDBCardText>
-                                    <MDBBtn color="primary" href="#">Add to Cart</MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
+                                </a>
                             </MDBCol>
                             <MDBCol>
+                            <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
+                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
-                                    <MDBCardTitle>Medicine Name</MDBCardTitle>
+                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
-                                        Some quick example text to build on the Medicine Name and make
-                                        up the bulk of the card&apos;s content.
+                                        <div className="med-content-container">
+                                            <div className="grey-text text-center">
+                                            <p className="med-sub-h">
+                                                <MDBIcon icon="tags" />
+                                                    Neozep Forte
+                                                </p>
+                                            </div>
+                                            <div className="prizeandlogo-container">
+                                                <div className="black-text text-center">
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                </div>    
+                                            </div>
+                                        </div>
                                     </MDBCardText>
-                                    <MDBBtn color="primary" href="#">Add to Cart</MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
+                                </a>
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
                 </div>
                 </div>
+                
         )
     }
 }
