@@ -33,7 +33,7 @@ class Carousel extends Component{
                         alt="Second slide"
                     />
                     <MDBMask overlay="black-strong" className="flex-center flex-column text-white text-center">
-                        <h2 className="caption-header">Where Lives &<br/> Medicines Matter</h2>
+                        <h2 className="caption-header-2">Where Lives &<br/> Medicines Matter</h2>
                         <h4>Essential to humanity's survival.</h4>
                         <p>God gave us life, therefore do not waste life. Preserve it!</p>
                         <div className="d-flex justify-content-center">
@@ -51,7 +51,7 @@ class Carousel extends Component{
                         alt="Third slide"
                     />
                     <MDBMask overlay="black-strong" className="flex-center flex-column text-white text-center">
-                        <h2 className="caption-header"><span className="guide-h">Guiding you</span><br/>every step of the way</h2>
+                        <h2 className="caption-header-3"><span className="guide-h">Guiding you</span><br/>every step of the way</h2>
                         <h4>Reliable. Effecient. Easy To Use</h4>
                         <p>This Software is designed to help you live a healthy life.</p>
                     </MDBMask>
