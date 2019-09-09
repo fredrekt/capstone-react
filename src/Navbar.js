@@ -29,40 +29,55 @@ class Navbar extends React.Component {
       color:'black',
     });
   }
+  state = {
+    color: 'white'
+  }
+
+  listenScrollEvent = e => {
+    if (window.scrollY > 500) {
+      this.setState({color: 'black'})
+    } else {
+      this.setState({color: 'white'})
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.listenScrollEvent)
+  }
 
   render() {
     return (
       <div>
         <header>
-            <MDBNavbar color="black" fixed="top" expand="md" scrolling dark transparent>
+            <MDBNavbar color="eleg" fixed="top" expand="md" scrolling dark transparent>
               <MDBNavbarBrand href="/">
-                <strong style={{'color':'this.state.color'}} id="nav-brand">Medishop</strong>
+                <strong style={{color:this.state.color}} id="nav-brand">Medishop</strong>
               </MDBNavbarBrand>
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar>
                 <MDBNavbarNav right>
                     {/* <div className="right"> */}
                   <MDBNavItem active>
-                    <MDBNavLink style={{'color':'this.state.color'}} className="nav-option" to="/">Home</MDBNavLink>
+                    <MDBNavLink style={{color:this.state.color}} className="nav-option" to="/">Home</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink style={{'color':'this.state.color'}} className="nav-option" to="/about">About</MDBNavLink>
+                    <MDBNavLink style={{color:this.state.color}} className="nav-option" to="/about">About</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink style={{'color':'this.state.color'}} className="nav-option" to="/medicines-shop">Medicines</MDBNavLink>
+                    <MDBNavLink style={{color:this.state.color}} className="nav-option" to="/medicines-shop">Medicines</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink style={{'color':'this.state.color'}} className="nav-option" to="/contact">Contact</MDBNavLink>
+                    <MDBNavLink style={{color:this.state.color}} className="nav-option" to="/contact">Contact</MDBNavLink>
                   </MDBNavItem>
                   {/* </div> */}
                   <MDBNavItem>
-                    <MDBNavLink hidden className="nav-option" to="/sign-in">Login</MDBNavLink>
+                    <MDBNavLink hidden style={{color:this.state.color}}  className="nav-option" to="/sign-in">Login</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink hidden className="nav-option" to="/sign-up">Register</MDBNavLink>
+                    <MDBNavLink hidden style={{color:this.state.color}}  className="nav-option" to="/sign-up">Register</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink hidden className="nav-option" to="/sign-in">Logout</MDBNavLink>
+                    <MDBNavLink hidden style={{color:this.state.color}}  className="nav-option" to="/sign-in">Logout</MDBNavLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>
