@@ -87,6 +87,13 @@ strong#nav-brand{
     margin-top: 5%;
     margin-bottom: 4%;
 }
+.f-dev-container{
+    width:100%;
+    height:120%;
+}
+.f-dev-sub-hdr{
+    font-size: 14px;
+}
 /* MDB Features Ends */
 
 /*
