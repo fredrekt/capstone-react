@@ -49,7 +49,7 @@ class MedicineItem extends Component{
                                 headache and body aches.
                             </p>
                             <MDBCollapse id="basicCollapse" isOpen={this.state.collapseID}>
-                            <h3 className="med-info">Dosage</h3>
+                            <h3 className="med-prod-info-2">Dosage</h3>
                             <p>
                             TAB. Adult & Children- >12yrs:
                             1 tab, SYRUP. Children- >12yrs: 15ml,
@@ -60,18 +60,16 @@ class MedicineItem extends Component{
                             4-6mos: 1-1.25ml, birth-3mos: 0.75-1ml.
                             TO BE TAKE 4 TIMES DAILY
                             </p>
-                            <br/>
-                            <h3 className="med-info">Shape</h3>
+                            <h3 className="med-prod-info-2">Shape</h3>
                             <p>( 0.662" x 0.300" 
                             elliptical-shaped ), oblong
                             </p>
-                            <br/>
-                            <h3 className="med-info">Brand</h3>
+                            <h3 className="med-prod-info-2">Brand</h3>
                             <p>Neozep Forte</p>
                             </MDBCollapse>
                             <MDBBtn size="sm" onClick={this.toggleCollapse("basicCollapse")} outline color="primary">Read More</MDBBtn>
                             <br/>
-                            <MDBBtn size="sm" className="btn-cart" color="primary">Add to cart</MDBBtn>
+                            <MDBBtn size="" className="btn-cart" color="primary">Add to cart</MDBBtn>
                         </MDBCol>
                     </MDBRow>
                     {/* <MDBRow>
