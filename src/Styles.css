@@ -407,6 +407,12 @@ strong#nav-brand{
     font-size: 30px;
     margin-top: 10%;
 }
+.med-prod-info-2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold; 
+    font-size: 30px;
+    margin-top: 5%;
+}
 .med-option-container{
     margin-top: 2%;
     margin-left: 32%;
