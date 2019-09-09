@@ -21,7 +21,7 @@ class Carousel extends Component{
                     <h2 className="caption-header">Medicines </h2>
                     <h5>It keeps us alive and be there for our loved ones.</h5>
                     <p>Software that helps everyone to be healthy and make things easier.</p>
-                        <MDBBtn outline size="lg" className="mt-3" color="white">Get Started</MDBBtn>
+                        <MDBBtn href="/sign-up" outline size="lg" className="mt-3" color="white">Get Started</MDBBtn>
                     </MDBMask>
                 </MDBView>
                 </MDBCarouselItem>
@@ -37,8 +37,8 @@ class Carousel extends Component{
                         <h4>Essential to humanity's survival.</h4>
                         <p>God gave us life, therefore do not waste life. Preserve it!</p>
                         <div className="d-flex justify-content-center">
-                            <div className="p-2 text-left"><MDBBtn size="lg" className="mt-3" outline color="white">Read More</MDBBtn></div>
-                            <div className="p-2 text-left"><MDBBtn size="lg" className="mt-3" outline color="white">Contact Us</MDBBtn></div>
+                            <div className="p-2 text-left"><MDBBtn href="/about" size="lg" className="mt-3" outline color="white">Read More</MDBBtn></div>
+                            <div className="p-2 text-left"><MDBBtn href="/contact" size="lg" className="mt-3" outline color="white">Contact Us</MDBBtn></div>
                         </div>
                     </MDBMask>
                     </MDBView>
