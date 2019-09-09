@@ -49,7 +49,7 @@ class Navbar extends React.Component {
                     <MDBNavLink style={{'color':'this.state.color'}} className="nav-option" to="/about">About</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink style={{'color':'this.state.color'}} className="nav-option" to="/medicines">Medicines</MDBNavLink>
+                    <MDBNavLink style={{'color':'this.state.color'}} className="nav-option" to="/medicines-shop">Medicines</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
                     <MDBNavLink style={{'color':'this.state.color'}} className="nav-option" to="/contact">Contact</MDBNavLink>
