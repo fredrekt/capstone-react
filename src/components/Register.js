@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import Breadcrumb from './Breadcrumb'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
-
+import { MDBAnimation } from "mdbreact"
 class Register extends Component{
     render(){
         return(
@@ -11,11 +11,15 @@ class Register extends Component{
                         <MDBRow>
                             <MDBCol md="6">
                                 <div className="register-header-container">
+                                    <MDBAnimation type="slideInLeft">
                                     <h1 className="register-d-header">Sign Up</h1>
+                                    </MDBAnimation> 
                                     <p className="register-d-content">Already have an account?
                                     <br/>Just sign in in a second
                                     </p>
+                                    <MDBAnimation type="rollIn">
                                     <MDBBtn href="/sign-in" size="lg" outline color="success">SIGN IN</MDBBtn>
+                                    </MDBAnimation>
                                 </div>
                             </MDBCol>
                             <MDBCol md="6">

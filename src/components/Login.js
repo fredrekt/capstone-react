@@ -1,7 +1,7 @@
 import React from "react";
 import Breadcrumb from './Breadcrumb'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody, MDBIcon } from 'mdbreact';
-
+import { MDBAnimation } from "mdbreact"
 const Login = () => {
   return (
       <div>
@@ -10,11 +10,15 @@ const Login = () => {
         <MDBRow>
             <MDBCol md="6">
                 <div className="login-header-container">
+                    <MDBAnimation type="fadeInDown">
                     <h1 className="login-d-header">Login</h1>
+                    </MDBAnimation>
                     <p className="login-d-content">Don't have an account?
                     <br/>Just sign up in a minute
                     </p>
+                    <MDBAnimation type="tada">
                     <MDBBtn size="lg" href="/sign-up" outline color="info">SIGN UP</MDBBtn>
+                    </MDBAnimation>
                 </div>
             </MDBCol>
             <MDBCol md="6">
