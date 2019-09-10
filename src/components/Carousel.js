@@ -3,6 +3,7 @@ import car1 from '../img/bg-2.jpeg'
 import car2 from '../img/item3.jpg'
 import car3 from '../img/bg-3.jpeg'
 import { MDBBtn, MDBMask ,MDBCarousel, MDBView, MDBCarouselInner, MDBCarouselItem } from 'mdbreact'
+import { MDBAnimation } from "mdbreact";
 
 class Carousel extends Component{
     render(){
@@ -18,7 +19,9 @@ class Carousel extends Component{
                 <MDBCarouselItem itemId="1">
                 <MDBView src={car2}>
                     <MDBMask overlay="black-light" className="flex-center flex-column text-white text-center">
+                    <MDBAnimation type="bounce">
                     <h2 className="caption-header">Medicines </h2>
+                    </MDBAnimation>
                     <h5>It keeps us alive and be there for our loved ones.</h5>
                     <p>Software that helps everyone to be healthy and make things easier.</p>
                         <MDBBtn href="/sign-up" outline size="lg" className="mt-3" color="white">Get Started</MDBBtn>
