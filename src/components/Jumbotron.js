@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { MDBJumbotron, MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCollapse } from "mdbreact";
+import Slide from 'react-reveal/Slide'
 
 class Jumbotron extends Component {
     state = {
@@ -15,6 +16,7 @@ class Jumbotron extends Component {
       }
     render(){
         return (
+          <Slide up>
             <MDBContainer className="mt-5 text-center">
             <MDBRow>
                 <MDBCol>
@@ -39,6 +41,7 @@ class Jumbotron extends Component {
                 </MDBCol>
             </MDBRow>
             </MDBContainer>
+        </Slide>
         )
     }
 }
