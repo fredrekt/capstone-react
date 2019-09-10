@@ -9,6 +9,8 @@ import car3 from '../img/med-car-3.jpeg'
 import medsample from '../img/meds-sample-pic.jpeg'
 import phlogo from '../img/ph-flag.png'
 import biogesic from '../img/meds-bio.jpeg'
+import { MDBAnimation } from "mdbreact"
+import Slide from 'react-reveal/Slide'
 
 
 class Medicines extends Component{
@@ -26,7 +28,9 @@ class Medicines extends Component{
                 <MDBCarouselItem itemId="1">
                 <MDBView src={car2}>
                     <MDBMask overlay="black-light" className="flex-center flex-column text-white text-center">
+                    <MDBAnimation type="bounceInRight">
                     <h2 className="caption-header"> <span className="otc-header">OTC</span> <br/>Collection </h2>
+                    </MDBAnimation>
                     <h5>Pharmaceutical Drugs sold "over the counter" in all pharmacies.</h5>
                     <p>Drugs that do not need a doctor's prescription.</p>
                         <MDBBtn href="#OTC-section" outline size="lg" className="mt-3" color="white">See Collection</MDBBtn>
@@ -69,7 +73,9 @@ class Medicines extends Component{
                 </MDBCarouselItem>
                 </MDBCarouselInner>
                 </MDBCarousel>  
+                
                 <div className="med-container">
+                <Slide up>
                     <h1 className="med-otc-h">Over the Counter</h1>
                     <MDBContainer>
                         <MDBRow>
@@ -281,6 +287,8 @@ class Medicines extends Component{
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
+                    </Slide>
+                    <Slide up>
                     <h1 className="med-otc-h-2">Experimental Collection</h1>
                     <MDBContainer>
                         <MDBRow>
@@ -386,6 +394,7 @@ class Medicines extends Component{
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
+                    </Slide>
                 </div>
                 </div>
                 
