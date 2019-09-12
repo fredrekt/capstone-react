@@ -1,13 +1,8 @@
 import React from 'react';
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
+import { MDBBadge, MDBIcon, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
 import './Styles.css'
-import { MDBBtn } from "mdbreact";
-
-import { MDBCarousel, MDBCarouselInner, MDBCarouselItem } from
-"mdbreact";
-
-import HomeComponent from './components/HomeComponent'
-import AboutComponent from './components/AboutComponent'
+import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from "mdbreact"
+import { Link } from 'react-router-dom'
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -64,7 +59,7 @@ class Navbar extends React.Component {
                     <MDBNavLink style={{color:this.state.color}} className="nav-option" to="/about">About</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink style={{color:this.state.color}} className="nav-option" to="/medicines-shop">Medicines</MDBNavLink>
+                    <MDBNavLink style={{color:this.state.color}} className="nav-option" to="/medicines">Medicines</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
                     <MDBNavLink style={{color:this.state.color}} className="nav-option" to="/contact">Contact</MDBNavLink>
@@ -79,6 +74,35 @@ class Navbar extends React.Component {
                   <MDBNavItem>
                     <MDBNavLink hidden style={{color:this.state.color}}  className="nav-option" to="/sign-in">Logout</MDBNavLink>
                   </MDBNavItem>
+
+                  <MDBNavItem>
+                    <MDBDropdown>
+                    <MDBDropdownToggle nav caret>
+                      {/* <MDBNavLink style={{color:this.state.color}}  className="nav-option" to="/sign-in"><MDBIcon size="lg" icon="shopping-cart" /><MDBBadge color="danger" className="ml-2">0</MDBBadge></MDBNavLink> */}
+                      <Link className="white-text" to="/cart">
+                        <MDBIcon size="lg" icon="shopping-cart" /><MDBBadge color="danger" className="ml-2">0</MDBBadge>
+                      </Link>
+                    </MDBDropdownToggle>
+                    <MDBDropdownMenu>
+                      <MDBDropdownItem>
+                       <Link to="/my-account">
+                       Account
+                       </Link>
+                      </MDBDropdownItem>
+                      <MDBDropdownItem>
+                        <Link to="/help">
+                        Help
+                        </Link>
+                      </MDBDropdownItem>
+                      <MDBDropdownItem>
+                        <Link to="/">
+                        Logout
+                        </Link>
+                      </MDBDropdownItem>
+                    </MDBDropdownMenu>
+                    </MDBDropdown>
+                  </MDBNavItem> 
+            
                 </MDBNavbarNav>
               </MDBCollapse>
             </MDBNavbar>
