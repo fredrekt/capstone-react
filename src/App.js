@@ -12,6 +12,7 @@ import Register from './components/Register'
 import Medicines from './components/Medicines'
 import MedicineItem from './components/MedicineItem'
 import Page404 from './components/Page404'
+import Cart from './components/Cart'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/sign-up" component={Register}/>
             <Route path="/medicines-shop" component={Medicines}/>
             <Route path="/meds/item" component={MedicineItem}/>
+            <Route path="/cart" component={Cart}/>
             <Route path="*" component={Page404}/>
           </Switch>
         <Footer/>
