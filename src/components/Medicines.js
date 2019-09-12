@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Breadcrumb from './Breadcrumb';
-import { MDBIcon, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBRow, MDBCol ,MDBBtn, MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
+import { MDBFormInline, MDBIcon, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBRow, MDBCol ,MDBBtn, MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
 "mdbreact";
 import Carousel from './Carousel';
 import car1 from '../img/med-car-1.jpeg'
@@ -74,7 +74,18 @@ class Medicines extends Component{
                 </MDBCarouselInner>
                 </MDBCarousel>  
                 
+                
                 <div className="med-container">
+                    <div className="search-component">
+                    <MDBCol className="search-container" md="6">
+                        <div className="search-container">
+                        <MDBFormInline className="md-form">
+                            <MDBIcon icon="search" />
+                            <input className="form-control form-control-sm ml-3 w-75" type="text" placeholder="Enter drug name or drug category, for what use, etc. " aria-label="Search" />
+                        </MDBFormInline>
+                        </div>
+                    </MDBCol>
+                    </div>
                 <Slide up>
                     <h1 className="med-otc-h">Over the Counter</h1>
                     <MDBContainer>
