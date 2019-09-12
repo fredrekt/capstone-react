@@ -82,7 +82,7 @@ class Medicines extends Component{
                             <MDBCol>
                                 <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
@@ -95,7 +95,7 @@ class Medicines extends Component{
                                             </div>
                                             <div className="prizeandlogo-container">
                                                 <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
                                                 </div>    
                                             </div>
                                         </div>
@@ -107,7 +107,7 @@ class Medicines extends Component{
                             <MDBCol>
                             <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
@@ -120,7 +120,7 @@ class Medicines extends Component{
                                             </div>
                                             <div className="prizeandlogo-container">
                                                 <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
                                                 </div>    
                                             </div>
                                         </div>
@@ -132,7 +132,7 @@ class Medicines extends Component{
                             <MDBCol>
                             <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
@@ -145,7 +145,7 @@ class Medicines extends Component{
                                             </div>
                                             <div className="prizeandlogo-container">
                                                 <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
                                                 </div>    
                                             </div>
                                         </div>
@@ -157,7 +157,7 @@ class Medicines extends Component{
                             <MDBCol>
                             <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
@@ -170,7 +170,7 @@ class Medicines extends Component{
                                             </div>
                                             <div className="prizeandlogo-container">
                                                 <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
                                                 </div>    
                                             </div>
                                         </div>
@@ -188,7 +188,7 @@ class Medicines extends Component{
                             <MDBCol>
                             <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
@@ -201,7 +201,7 @@ class Medicines extends Component{
                                             </div>
                                             <div className="prizeandlogo-container">
                                                 <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
                                                 </div>    
                                             </div>
                                         </div>
@@ -213,7 +213,7 @@ class Medicines extends Component{
                             <MDBCol>
                             <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
@@ -226,7 +226,7 @@ class Medicines extends Component{
                                             </div>
                                             <div className="prizeandlogo-container">
                                                 <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
                                                 </div>    
                                             </div>
                                         </div>
@@ -238,7 +238,7 @@ class Medicines extends Component{
                             <MDBCol>
                             <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
@@ -251,7 +251,7 @@ class Medicines extends Component{
                                             </div>
                                             <div className="prizeandlogo-container">
                                                 <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
                                                 </div>    
                                             </div>
                                         </div>
@@ -263,7 +263,7 @@ class Medicines extends Component{
                             <MDBCol>
                             <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
@@ -276,7 +276,7 @@ class Medicines extends Component{
                                             </div>
                                             <div className="prizeandlogo-container">
                                                 <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
                                                 </div>    
                                             </div>
                                         </div>
@@ -295,7 +295,7 @@ class Medicines extends Component{
                             <MDBCol>
                             <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
@@ -308,7 +308,7 @@ class Medicines extends Component{
                                             </div>
                                             <div className="prizeandlogo-container">
                                                 <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
                                                 </div>    
                                             </div>
                                         </div>
@@ -320,7 +320,7 @@ class Medicines extends Component{
                             <MDBCol>
                             <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
@@ -333,7 +333,7 @@ class Medicines extends Component{
                                             </div>
                                             <div className="prizeandlogo-container">
                                                 <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
                                                 </div>    
                                             </div>
                                         </div>
@@ -345,7 +345,7 @@ class Medicines extends Component{
                             <MDBCol>
                             <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
@@ -358,7 +358,7 @@ class Medicines extends Component{
                                             </div>
                                             <div className="prizeandlogo-container">
                                                 <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
                                                 </div>    
                                             </div>
                                         </div>
@@ -370,7 +370,7 @@ class Medicines extends Component{
                             <MDBCol>
                             <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
                                     <MDBCardText>
@@ -383,7 +383,7 @@ class Medicines extends Component{
                                             </div>
                                             <div className="prizeandlogo-container">
                                                 <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
                                                 </div>    
                                             </div>
                                         </div>
