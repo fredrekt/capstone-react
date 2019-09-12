@@ -40,7 +40,7 @@ class FeaturedItems extends Component{
                                                 </div>
                                                 <div className="prizeandlogo-container">
                                                     <div className="black-text text-center">
-                                                        <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 6.00</h4> 
+                                                        <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 6.00</h4> 
                                                     </div>    
                                                 </div>
                                             </div>
@@ -66,7 +66,7 @@ class FeaturedItems extends Component{
                                                 </div>
                                                 <div className="prizeandlogo-container">
                                                     <div className="black-text text-center">
-                                                        <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                        <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
                                                     </div>    
                                                 </div>
                                             </div>
@@ -91,7 +91,7 @@ class FeaturedItems extends Component{
                                                 </div>
                                                 <div className="prizeandlogo-container">
                                                     <div className="black-text text-center">
-                                                        <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                        <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
                                                     </div>    
                                                 </div>
                                             </div>
@@ -116,7 +116,7 @@ class FeaturedItems extends Component{
                                                 </div>
                                                 <div className="prizeandlogo-container">
                                                     <div className="black-text text-center">
-                                                        <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> Php 5.00</h4> 
+                                                        <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
                                                     </div>    
                                                 </div>
                                             </div>
