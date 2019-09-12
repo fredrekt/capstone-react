@@ -424,6 +424,13 @@ strong#nav-brand{
     text-decoration: none;
     color: black;
 }
+.search-container{
+    margin-left: 23%;
+    margin-right: auto;
+}
+.search-component{
+    margin-bottom: 5%;
+}
 /* Medicines Component Ends */
 
 /* Medicine Item Component Starts */
