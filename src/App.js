@@ -10,7 +10,8 @@ import About from './components/About'
 import Login from './components/Login'
 import Register from './components/Register'
 import Medicines from './components/Medicines'
-import MedicineItem from './components/MedicineItem';
+import MedicineItem from './components/MedicineItem'
+import Page404 from './components/Page404'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/sign-up" component={Register}/>
             <Route path="/medicines-shop" component={Medicines}/>
             <Route path="/meds/item" component={MedicineItem}/>
+            <Route path="*" component={Page404}/>
           </Switch>
         <Footer/>
       </div>
