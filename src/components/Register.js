@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import Breadcrumb from './Breadcrumb'
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
+import { MDBAlert, MDBIcon, MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 import { MDBAnimation } from "mdbreact"
 class Register extends Component{
     render(){
@@ -23,6 +23,13 @@ class Register extends Component{
                                 </div>
                             </MDBCol>
                             <MDBCol md="6">
+                                <MDBAnimation type="slideInUp">
+                                    <MDBContainer>
+                                        <MDBAlert color="success" dismiss>
+                                            <strong>Hello Stranger!</strong> Lets get to know each other! <MDBIcon far icon="grin-beam-sweat" />
+                                        </MDBAlert>
+                                    </MDBContainer>
+                                </MDBAnimation>
                             <MDBCard>
                                 <MDBCardBody>
                                 <form>
@@ -90,8 +97,11 @@ class Register extends Component{
                                     /> */}
                                     </div>
                                     <div className="text-center py-4 mt-3">
-                                    <MDBBtn className="login-bbn-f" style={{'font-weight':'bold','letter-spacing':'0.02em'}} color="success" type="submit">
+                                    <MDBBtn className="login-bbn-f" style={{'font-weight':'bold','letter-spacing':'0.02em'}} color="success" type="submit">                 
                                         Create Account
+                                        <div class="spinner-border spinner-border-sm text-white ml-2" role="status"> 
+                                            <span class="sr-only"></span>
+                                        </div>
                                     </MDBBtn>
                                     </div>
                                 </form>

@@ -1,6 +1,6 @@
 import React from "react";
 import Breadcrumb from './Breadcrumb'
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody, MDBIcon } from 'mdbreact';
+import { MDBContainer, MDBAlert, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody, MDBIcon } from 'mdbreact';
 import { MDBAnimation } from "mdbreact"
 const Login = () => {
   return (
@@ -22,6 +22,13 @@ const Login = () => {
                 </div>
             </MDBCol>
             <MDBCol md="6">
+                <MDBAnimation type="slideInUp">
+                    <MDBContainer>
+                        <MDBAlert color="info" dismiss>
+                            <strong>Holy Guacamole!</strong> Only members get to shop.
+                        </MDBAlert>
+                    </MDBContainer>
+                </MDBAnimation>
             <MDBCard>
                 <MDBCardBody>
                 <form>
@@ -47,10 +54,11 @@ const Login = () => {
                     <div className="text-center py-4 mt-3">
                     <MDBBtn className="login-bbn-f" style={{'font-weight':'bold','letter-spacing':'0.02em'}} color="primary" type="submit">
                         Login
+                        <div hidden class="spinner-border spinner-border-sm text-white ml-2" role="status"> 
+                            <span class="sr-only"></span>
+                        </div>
                     </MDBBtn>
-                    <div hidden class="spinner-border text-info">
-                        <span class="sr-only"></span>
-                    </div>
+                    
                     <MDBBtn className="login-bbn-f" style={{'font-weight':'bold','letter-spacing':'0.02em'}} color="danger" type="submit">
                         <MDBIcon
                         fab
