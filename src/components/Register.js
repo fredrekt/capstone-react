@@ -99,7 +99,7 @@ class Register extends Component{
                                     <div className="text-center py-4 mt-3">
                                     <MDBBtn className="login-bbn-f" style={{'font-weight':'bold','letter-spacing':'0.02em'}} color="success" type="submit">                 
                                         Create Account
-                                        <div class="spinner-border spinner-border-sm text-white ml-2" role="status"> 
+                                        <div hidden class="spinner-border spinner-border-sm text-white ml-2" role="status"> 
                                             <span class="sr-only"></span>
                                         </div>
                                     </MDBBtn>
