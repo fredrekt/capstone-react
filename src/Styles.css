@@ -514,3 +514,35 @@ strong#nav-brand{
     color:grey;
 }
 /* 404 Component Ends */
+
+/*
+====== Cart Component =======
+*/
+
+/* Cart Component Starts */
+.cart-container{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.cart2-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.cart-header{
+
+}
+.cart-price{
+    
+}
+.cart-img{
+    width: 50%;
+    height: 100%;
+}
+.cart-suggestions-container{
+    margin-top:10%;
+    margin-bottom: 5%;
+}
+.cart-suggestions-h{
+    margin-bottom: 5%;
+}
+/* Cart Component Ends */
