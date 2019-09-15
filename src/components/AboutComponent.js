@@ -5,7 +5,9 @@ import Team from './Team'
 import Use from './Use'
 import ProjectTools from './ProjectTools'
 import Breadcrumb from './Breadcrumb'
-
+import ScrollUpButton from "react-scroll-up-button"
+import { MDBIcon, MDBTooltip } from 'mdbreact'
+import ScrollButton from './ScrollButton'
 
 class AboutComponent extends Component{
     render(){
@@ -16,7 +18,8 @@ class AboutComponent extends Component{
                <Use/>
                <ProjectTools/>
                <Team/>
-               
+               <ScrollButton/>
+                 
             </div>
         )
     }

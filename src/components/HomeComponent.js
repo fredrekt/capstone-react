@@ -4,6 +4,8 @@ import Features from './Features';
 import FeaturedItems from './FeaturedItems';
 import Navbar from '../Navbar'
 import Carousel from './Carousel'
+import ScrollButton from './ScrollButton'
+
 class HomeComponent extends Component{
     render(){
         return(
@@ -12,6 +14,7 @@ class HomeComponent extends Component{
                 <Jumbotron/>
                 <Features/>
                 <FeaturedItems/>
+                <ScrollButton/>
             </div>
         )
     }
