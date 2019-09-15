@@ -1,19 +1,26 @@
 import React, { Component } from 'react'
-import { MDBContainer, MDBCol, MDBRow, MDBBtn, MDBCard, MDBCardText, MDBCardBody, MDBCardTitle, MDBCardImage, MDBIcon } from 'mdbreact' 
+import { MDBContainer, MDBCol, MDBRow, MDBBtn, MDBCard, MDBCardText, MDBCardBody, MDBCardTitle, MDBCardImage, MDBIcon, MDBAlert, MDBAnimation } from 'mdbreact' 
 import Breadcrumb from './Breadcrumb'
 import biogesic from '../img/meds-bio.jpeg'
 import biogesic2 from '../img/meds-sample-pic-2.jpeg'
 import biogesic3 from '../img/meds-sample-pic-3.jpeg'
 import biogesic4 from '../img/meds-sample-pic-4.jpeg'
 import phlogo from '../img/ph-flag.png'
+import ScrollButton from './ScrollButton'
 
 class Cart extends Component{
     render(){
         return(
             <div>
                 <Breadcrumb bheader="Shopping Cart" bcurrent="Cart" />
-                    <div className="cart-container">   
-                        
+                    <div className="cart-container"> 
+                        <MDBAnimation type="slideInUp">  
+                            <MDBContainer>
+                                <MDBAlert color="success" dismiss>
+                                <strong>This is your cart!</strong> The items that wished to buy are all here, last final step to obtain items is payment.
+                                </MDBAlert>
+                            </MDBContainer>
+                        </MDBAnimation>
                         <MDBContainer>
                             <h1 className="cart-header">
                                 Your Cart
@@ -23,36 +30,56 @@ class Cart extends Component{
                             </p>
                             <MDBRow>
                                 <MDBCol>
-                                    <img className="cart-img rounded" src={biogesic}/>
+                                    <div className="cart-item-container">
+                                        <img className="cart-img rounded" src={biogesic}/>
+                                        <h4 className="cart-item-name">Neosep</h4>
+                                        <p className="cart-item-id grey-text">ID: 0002390</p>
+                                    </div>
                                 </MDBCol>
-                                <MDBCol>
+                                <MDBCol style={{'text-align':'right'}}>
                                     <h2 className="cart-price"> <span>&#8369;</span> 75.00</h2>
+                                    <p className="qty-sub-txt grey-text">Quantity: 1</p>
+                                    <MDBBtn style={{'margin-top':'-2%'}} outline color="danger" size="sm">Remove</MDBBtn>
                                 </MDBCol>
                             </MDBRow>
                             <div className="cart2-container">
                             <MDBRow>
                                 <MDBCol>
-                                    <img className="cart-img rounded" src={biogesic2}/>
+                                    <div className="cart-item-container">
+                                        <img className="cart-img rounded" src={biogesic2}/>
+                                        <h4 className="cart-item-name">Biogesic</h4>
+                                        <p className="cart-item-id grey-text">ID: 01231251</p>
+                                    </div>
                                 </MDBCol>
-                                <MDBCol>
+                                <MDBCol style={{'text-align':'right'}}>
                                     <h2 className="cart-price"> <span>&#8369;</span> 23.00</h2>
+                                    <p className="qty-sub-txt grey-text">Quantity: 1</p>
+                                    <MDBBtn style={{'margin-top':'-2%'}} outline color="danger" size="sm">Remove</MDBBtn>
                                 </MDBCol>
                             </MDBRow>
                             </div>
                             <MDBRow>
                                 <MDBCol>
-                                    <img className="cart-img rounded" src={biogesic}/>
+                                    <div className="cart-item-container">
+                                        <img className="cart-img rounded" src={biogesic}/>
+                                        <h4 className="cart-item-name">Paracetamol Acidreflux</h4>
+                                        <p className="cart-item-id grey-text">ID: 0001510</p>
+                                    </div>
                                 </MDBCol>
-                                <MDBCol>
+                                <MDBCol style={{'text-align':'right'}}>
                                     <h2 className="cart-price"> <span>&#8369;</span> 13.00</h2>
+                                    <p className="qty-sub-txt grey-text">Quantity: 1</p>
+                                    <MDBBtn style={{'margin-top':'-2%'}} outline color="danger" size="sm">Remove</MDBBtn>
                                 </MDBCol>
                             </MDBRow>
                             <MDBRow>
                                 <MDBCol>
                                     
                                 </MDBCol>
-                                <MDBCol>
-                                    <MDBBtn size="lg" color="success">Checkout</MDBBtn>
+                                <MDBCol style={{'text-align':'right'}}>
+                                    <h3 className="cart-total-txt">Order-Sub-Total &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>&#8369;</span> 168</h3>
+                                    <p className="cart-items-left grey-text">3 items</p>
+                                    <MDBBtn style={{'width':'400px'}} size="md" color="success"><h5 className="cart-checkout-txt">Checkout</h5></MDBBtn>
                                 </MDBCol>
                             </MDBRow>
                         </MDBContainer>
@@ -144,6 +171,7 @@ class Cart extends Component{
                             </MDBContainer> 
                         </div>
                     </div>
+                    <ScrollButton/>
             </div>
         )
     }
