@@ -531,8 +531,11 @@ strong#nav-brand{
 .cart-header{
 
 }
+.cart-sub-h{
+    margin-bottom: 5%;
+}
 .cart-price{
-    
+    font-size: 30px;
 }
 .cart-img{
     width: 50%;
@@ -545,4 +548,56 @@ strong#nav-brand{
 .cart-suggestions-h{
     margin-bottom: 5%;
 }
+.cart-item-container{
+    margin-top: -5%;
+}
+.cart-item-name{
+    font-family: 'Roboto', sans-serif;
+}
+.cart-item-id{
+    margin-top: -3%;
+}
+.cart-checkout-txt{
+    letter-spacing: 0.1em;
+}
+.cart-total-txt{
+    font-size: 25px;
+}
+.qty-sub-txt{
+    margin-top: -2%;
+}
+.cart-items-left {
+    margin-right: 63%;
+}
 /* Cart Component Ends */
+
+/* 
+============== Scroll Button ===========
+*/
+
+/* Custom Scroll Button Starts */
+.AnyClassForContainer {
+    position: fixed;
+    right: -100px;
+    bottom: 10%;
+    transition: right 0.5s;
+    cursor: pointer;
+    font-size: 20px; 
+    padding: 10px;
+  }
+  
+  .AnyClassForTransition {
+    right: 2%;
+  }
+/* Custom Scroll Button Ends */
+
+/*
+=========== Payment Method Component =========
+*/
+
+/* Payment Method Component Starts */
+.container-payment-icons{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+/* Payment Method Component Ends */
