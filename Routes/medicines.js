@@ -1,7 +1,7 @@
 const express = require('express')
 const conn = require('../connection')
 const Router = express.Router()
--
+
 Router.get("/",(req, res)=>{
     conn.query("select name,brand,generic_name,price from medicines where med_id=1",(err, rows, fields)=>{
         if(!err){
