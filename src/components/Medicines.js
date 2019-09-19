@@ -37,7 +37,6 @@ class Medicines extends Component{
     render(){
         return(
             <div>
-                <img src="/img/dev1.jpg"/>
            <MDBCarousel
                     activeItem={1}
                     length={3}
