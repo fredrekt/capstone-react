@@ -3,7 +3,7 @@ const conn = require('../connection')
 const Router = express.Router()
 
 Router.get("/",(req, res)=>{
-    conn.query("select name,brand,generic_name,price from medicines where med_id=1",(err, rows, fields)=>{
+    conn.query("select * from medicines where category= 'vitamins'  ",(err, rows, fields)=>{
         if(!err){
             console.log('Medicines JSON is here')
             // res.send("<h1>"+rows[1].name+"</h1>")
