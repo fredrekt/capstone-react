@@ -19,10 +19,21 @@ const qry = "SELECT * FROM medicines where name like '%"+value+"%' "
     
 conn.query(qry,(err, rows, fields)=>{
         if(!err){
+
+            if(rows!=0){
             console.log("fetched rows")
             console.log(rows)
             //worst case scenario
             res.send(rows)
+            }
+            else{
+                console.log('failed to find')
+                res.send('did not find anything')
+                // must redirect to a component 
+                // that will return an error view
+                // (wasnt able to find meds)
+            }
+            
         }
         else{
             console.log("Failed to search")
