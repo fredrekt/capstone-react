@@ -424,6 +424,14 @@ strong#nav-brand{
     text-decoration: none;
     color: black;
 }
+.no-medicines-container{
+    background-image: url('./img/kukuxumusu.png');
+    background-repeat: no-repeat;
+    background-position-y: -150%;
+    background-position-x: 2%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
 .search-container{
     margin-left: 23%;
     margin-right: auto;
