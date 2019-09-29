@@ -2,7 +2,8 @@ import React from 'react'
 import { MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdbreact'
 import Slide from 'react-reveal/Slide'
 import { MDBAnimation } from "mdbreact"
-
+import car from '../img/contactme.png'
+import Draggable from 'react-draggable'
 const Company = () =>{
     return(
         <Slide up>
@@ -15,7 +16,9 @@ const Company = () =>{
                             <MDBCol>
                                 <MDBAnimation type="bounce" infinite>
                                 <h2 className="comp-header-sub">
-                                    Where Are We?
+                                    <Draggable>
+                                   <img style={{'width':'20%'}} src={car}/>
+                                    </Draggable>
                                 </h2>
                                 </MDBAnimation>
                                 <div className="embed-responsive embed-responsive-16by9">
