@@ -7,7 +7,8 @@ const prodRouteAll = require('./Routes/allMeds')
 const allergyRoute = require('./Routes/AllergyMeds')
 const searchMeds = require('./Routes/searchMeds')
 const herbalMeds = require('./Routes/herbals')
-
+const users = require('./Routes/users')
+const login = require('./Routes/login')
 
 var app = express()
 // app.use(bodyParser.urlencoded({ extended: false}))
@@ -31,5 +32,10 @@ app.use("/search-meds",searchMeds)
 //herbal route
 app.use("/herbal",herbalMeds)
 
+//user to session route
+app.use("/users",users)
+
+//login route
+app.use("/login",login)
 
 app.listen(3001)
