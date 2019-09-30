@@ -14,6 +14,7 @@ import MedicineItem from './components/MedicineItem'
 import Page404 from './components/Page404'
 import Cart from './components/Cart'
 import PaymentMethod from './components/PaymentMethod'
+import { ProtectedRoute } from './auth/protectedroute'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/contact" component={ContactComponent}/>
             <Route path="/sign-in" component={Login}/>
             <Route path="/sign-up" component={Register}/>
+            <ProtectedRoute path="/medicines-shop" component={Medicines}/>
             <Route path="/medicines-shop" component={Medicines}/>
             <Route path="/meds/item" component={MedicineItem}/>
             <Route path="/cart" component={Cart}/>
