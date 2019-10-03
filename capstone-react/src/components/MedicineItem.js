@@ -37,9 +37,8 @@ class MedicineItem extends Component{
         console.log('You have rated: ' +this.state.rating)
         event.preventDefault();
         const vrating = this.state.rating
-        console.log(vrating)
 
-        fetch('/add-rating',{
+        fetch(`/add-rating/${this.state.selectedMed.med_id}`,{
             method: 'POST',
             credentials: 'include',
 
@@ -106,6 +105,7 @@ class MedicineItem extends Component{
                             <h2 className="med-item-name">{selectedItem.name}</h2>
                         </OverlayTrigger>
                             <h5 className="grey-text">{selectedItem.generic_name}</h5>
+                            <img className="img-price" src={phlogo} />
                             <h3 className="med-prod-info">Product Info</h3>
                             <p className="med-info">
                                 {selectedItem.info}
@@ -135,10 +135,10 @@ class MedicineItem extends Component{
              */}
 
             <MDBContainer>
+            <form onSubmit={this.handleRating}>
             <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
                 <MDBModalHeader toggle={this.toggle}></MDBModalHeader>
                 <MDBModalBody>
-                    <form onSubmit={this.handleRating}>
                     <div className="text-center">
                         <div>Rating: {rating}</div>
                         <input
@@ -151,14 +151,15 @@ class MedicineItem extends Component{
                         <br />
                         <Rating rating={rating} maxRating={5} />
                     </div>
-                    </form>
+                    
                 </MDBModalBody>
                 <MDBModalFooter>
                 <MDBBtn color="success" type="submit">Submit</MDBBtn>
-                <MDBBtn color="secondary" onClick={this.toggle}>Close</MDBBtn>
+                <MDBBtn color="danger" onClick={this.toggle}>Close</MDBBtn>
                 
                 </MDBModalFooter>
             </MDBModal>
+            </form>
             </MDBContainer>
             </div>
         )
