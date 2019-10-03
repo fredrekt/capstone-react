@@ -29,10 +29,9 @@ function App() {
             <Route path="/sign-in" component={Login}/>
             <Route path="/sign-up" component={Register}/>
             <ProtectedRoute path="/medicines-shop" component={Medicines}/>
-            <Route path="/medicines-shop" component={Medicines}/>
-            <Route path="/meds/item" component={MedicineItem}/>
-            <Route path="/cart" component={Cart}/>
-            <Route path="/payment-method" component={PaymentMethod} />
+            <ProtectedRoute path="/meds/:item" component={MedicineItem}/>
+            <ProtectedRoute path="/cart" component={Cart}/>
+            <ProtectedRoute path="/payment-method" component={PaymentMethod} />
             <Route path="*" component={Page404}/>
           </Switch>
         <Footer/>
