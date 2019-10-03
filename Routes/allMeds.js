@@ -6,7 +6,7 @@ Router.get("/",(req, res)=>{
     conn.query("select * from medicines",(err, rows, fields)=>{
         if(!err){
             console.log('Medicines JSON is here')
-            console.log(rows)
+            //console.log(rows)
             res.send(rows)
         }
         else{
