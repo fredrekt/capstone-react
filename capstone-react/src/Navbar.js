@@ -25,22 +25,11 @@ class Navbar extends React.Component {
       color:'black',
     });
   }
+  hehe = () =>{
+    auth.logout()
+    window.location.reload()
+  }
 
- // state = {
-  //   color: 'white'
-  // }
-
-  // listenScrollEvent = e => {
-  //   if (window.scrollY > 500) {
-  //     this.setState({color: 'black'})
-  //   } else {
-  //     this.setState({color: 'white'})
-  //   }
-  // }
-
-  // componentDidMount() {
-  //   window.addEventListener('scroll', this.listenScrollEvent)
-  // }
 
   render() {
     return (
@@ -92,7 +81,7 @@ class Navbar extends React.Component {
                         </Link>
                       </MDBDropdownItem>
                       <MDBDropdownItem>
-                        <Link to="/sign-in" onClick={auth.logout()}>
+                        <Link to="/sign-in" onClick={this.hehe}>
                         Logout
                         </Link>
                       </MDBDropdownItem>
@@ -109,10 +98,11 @@ class Navbar extends React.Component {
                   <MDBNavItem>
                     <MDBNavLink hidden style={{color:this.state.color}}  className="nav-option" to="/sign-up">Register</MDBNavLink>
                   </MDBNavItem>
+                  
                   <MDBNavItem>
-                    <MDBNavLink hidden style={{color:this.state.color}}  className="nav-option" to="/sign-in">Logout</MDBNavLink>
+                    <MDBNavLink hidden style={{color:this.state.color}} onClick={()=>{window.location.reload()}}  className="nav-option" to="/sign-in">Logout</MDBNavLink>
                   </MDBNavItem> 
-            
+                  
                 </MDBNavbarNav>
               </MDBCollapse>
             </MDBNavbar>
