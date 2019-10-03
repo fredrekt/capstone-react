@@ -12,12 +12,12 @@ Router.post("/:med_id",(req, res)=>{
     const medid = req.params.med_id
     const rate = req.body.vrating
 
-    const qry = "insert ratings(user_id, med_id, rating) values("+userid+","+medid+","+rate+")"
+    const qry = "insert INTO ratings(user_id, med_id, rating) values ('"+userid+"','"+medid+"','"+rate+"')"
         
     conn.query(qry,(err, rows, fields)=>{
             if(!err){
                 console.log("fetched rows")
-                res.send(rows)
+                //res.send(rows)
                 
             }
             else{
