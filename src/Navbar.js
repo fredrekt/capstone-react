@@ -3,6 +3,7 @@ import { MDBBadge, MDBIcon, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarTo
 import './Styles.css'
 import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from "mdbreact"
 import { Link } from 'react-router-dom'
+import auth from './auth/auth'
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -24,7 +25,8 @@ class Navbar extends React.Component {
       color:'black',
     });
   }
-  // state = {
+
+ // state = {
   //   color: 'white'
   // }
 
@@ -59,26 +61,21 @@ class Navbar extends React.Component {
                     <MDBNavLink style={{color:this.state.color}} className="nav-option" to="/about">About</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink style={{color:this.state.color}} className="nav-option" to="/medicines">Medicines</MDBNavLink>
+                    <MDBNavLink style={{color:this.state.color}} className="nav-option" to="/medicines-shop">Medicines</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
                     <MDBNavLink style={{color:this.state.color}} className="nav-option" to="/contact">Contact</MDBNavLink>
                   </MDBNavItem>
                   {/* </div> */}
-                  <MDBNavItem>
-                    <MDBNavLink hidden style={{color:this.state.color}}  className="nav-option" to="/sign-in">Login</MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink hidden style={{color:this.state.color}}  className="nav-option" to="/sign-up">Register</MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink hidden style={{color:this.state.color}}  className="nav-option" to="/sign-in">Logout</MDBNavLink>
-                  </MDBNavItem>
 
-                  <MDBNavItem>
+                  {
+                    (localStorage.getItem('logined')) ? 
+                    <MDBNavItem>
                     <MDBDropdown>
                     <MDBDropdownToggle nav caret>
-                      {/* <MDBNavLink style={{color:this.state.color}}  className="nav-option" to="/sign-in"><MDBIcon size="lg" icon="shopping-cart" /><MDBBadge color="danger" className="ml-2">0</MDBBadge></MDBNavLink> */}
+                      
+                      {
+                        /* <MDBNavLink style={{color:this.state.color}}  className="nav-option" to="/sign-in"><MDBIcon size="lg" icon="shopping-cart" /><MDBBadge color="danger" className="ml-2">0</MDBBadge></MDBNavLink> */}
                       <Link className="white-text" to="/cart">
                         <MDBIcon size="lg" icon="shopping-cart" /><MDBBadge color="danger" className="ml-2">0</MDBBadge>
                       </Link>
@@ -95,14 +92,28 @@ class Navbar extends React.Component {
                         </Link>
                       </MDBDropdownItem>
                       <MDBDropdownItem>
-                        <Link to="/">
+                        <Link to="/sign-in" onClick={auth.logout()}>
                         Logout
                         </Link>
                       </MDBDropdownItem>
                     </MDBDropdownMenu>
                     </MDBDropdown>
                   </MDBNavItem> 
-            
+                  : 
+                  <MDBNavItem>
+                  <MDBNavLink style={{color:this.state.color}}  className="nav-option" to="/sign-in">Login</MDBNavLink>
+                </MDBNavItem>
+                  }
+                  
+              
+                  <MDBNavItem>
+                    <MDBNavLink hidden style={{color:this.state.color}}  className="nav-option" to="/sign-up">Register</MDBNavLink>
+                  </MDBNavItem>
+                  
+                  <MDBNavItem>
+                    <MDBNavLink hidden style={{color:this.state.color}} onClick={()=>{window.location.reload()}}  className="nav-option" to="/sign-in">Logout</MDBNavLink>
+                  </MDBNavItem> 
+                  
                 </MDBNavbarNav>
               </MDBCollapse>
             </MDBNavbar>
