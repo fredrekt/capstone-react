@@ -14,6 +14,7 @@ const session = require('express-session');
 
 //ratings 
 const addrating = require('./Routes/Ratings/addrating')
+const displayratings = require('./Routes/Ratings/displayratings')
 
 var app = express()
 // app.use(bodyParser.urlencoded({ extended: false}))
@@ -69,6 +70,10 @@ app.use('/medicines', medsitem);
 
 //Rating Routes
 
+//add rating to a medicine
 app.use('/add-rating',addrating)
+
+//display rating on a medicine
+app.use('/med-rating',displayratings)
 
 app.listen(3001)
