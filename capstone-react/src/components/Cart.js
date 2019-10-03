@@ -79,7 +79,7 @@ class Cart extends Component{
                                 <MDBCol style={{'text-align':'right'}}>
                                     <h3 className="cart-total-txt">Order-Sub-Total &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>&#8369;</span> 168</h3>
                                     <p className="cart-items-left grey-text">3 items</p>
-                                    <MDBBtn style={{'width':'400px'}} size="md" color="success"><h5 className="cart-checkout-txt">Checkout</h5></MDBBtn>
+                                    <MDBBtn style={{'width':'400px'}} size="md" href="/payment-method" color="success"><h5 className="cart-checkout-txt" >Checkout</h5></MDBBtn>
                                 </MDBCol>
                             </MDBRow>
                         </MDBContainer>
