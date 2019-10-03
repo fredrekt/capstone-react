@@ -13,6 +13,7 @@ import { MDBAnimation } from "mdbreact"
 import Slide from 'react-reveal/Slide'
 import { userInfo } from 'os';
 import alaxan from '../img/alaxan.png'
+import { Link } from 'react-router-dom'
 
 //for scrolling 
 import ScrollButton from './ScrollButton'
@@ -480,7 +481,13 @@ class Medicines extends Component{
                             {this.state.allmeds.map(allmeds => 
                             <MDBCol style={{'margin-bottom':'5%'}} md="6" lg="3">
                                
-                            <a key={allmeds.med_id} className="meds-card-link" href="/meds/item">
+                            <Link 
+                            to={{
+                                    pathname: `/meds/${allmeds.name}`,
+                                }}
+                            key={allmeds.med_id} 
+                            className="meds-card-link"
+                            >
                                 <MDBCard>
                                     <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
                                     <MDBCardBody>
@@ -505,7 +512,7 @@ class Medicines extends Component{
                                     </MDBCardText>
                                     </MDBCardBody>
                                 </MDBCard>
-                                </a>
+                                </Link>
                               
                             </MDBCol>
                             )}
