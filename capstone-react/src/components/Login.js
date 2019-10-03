@@ -34,16 +34,16 @@ class Login extends Component {
         toast.success(
         <div>
         <MDBIcon size='lg' icon="check-circle" />
-        <span> User Authorized!</span></div>, {
+        <span className="success-h"> Welcome! User has been verified!</span></div>, {
             position: toast.POSITION.TOP_RIGHT,
-            autoClose:1300
+            autoClose:1200
           });
     }
 
     notifyErrorUser = () =>{
         toast.error(<div>
             <MDBIcon size='lg' icon="shield-alt" />
-            <span> Wrong Username</span></div>, {
+            <span className="error-h"> Sorry, username is incorrect!</span></div>, {
             position: toast.POSITION.TOP_RIGHT,
             autoClose: 1300
 
@@ -52,7 +52,7 @@ class Login extends Component {
     notifyErrorPassword = () =>{
         toast.error(<div>
             <MDBIcon size='lg' icon="lock" />
-            <span> Wrong Password</span></div>, {
+            <span className="error-h"> Sorry, password is incorrect</span></div>, {
             position: toast.POSITION.TOP_RIGHT,
             autoClose:1300
           });
@@ -95,6 +95,11 @@ class Login extends Component {
 
     googleResponse = (response) =>{
         console.log(response);
+        auth.login(() =>{
+            this.state.location.history.push("/medicines-shop");
+            window.location.reload()
+        });
+        this.setSubmitting(true);
     } 
 
 
@@ -128,15 +133,17 @@ render(){
                 setSubmitting(false);
             }, 1300);
         }else if(!foundPassword ){
+            setTimeout(()=>{
             this.setState({loginname: 
                 <div class="spinner-border white-text" role="status">
                     <span class="sr-only">Loading...</span>
                 </div>});
+            },500)
             setTimeout(() => {
                 this.setState({ loginname: 'login' });
                 this.notifyErrorPassword()
                 setSubmitting(false);
-            }, 1000);
+            }, 1300);
         }else{
             this.setState({
                 loginname: 
@@ -146,7 +153,7 @@ render(){
             })
             setTimeout(()=>{
                 this.notifySuccess()
-            },1300)
+            },800)
        
         
             setTimeout(()=>{
@@ -157,7 +164,7 @@ render(){
                 window.location.reload()
             });
             setSubmitting(true);
-        },1000)
+        },2000)
         
         }
             
