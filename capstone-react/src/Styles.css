@@ -481,6 +481,10 @@ strong#nav-brand{
     font-style: bold;
     width:90%; 
 }
+.img-price{
+    width:30%;
+    height:30%;
+}
 /* Medicine Item Component Ends */
 
 /*
