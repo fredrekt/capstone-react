@@ -1,20 +1,84 @@
 import React, { Component } from 'react'
 import Breadcrumb from './Breadcrumb'
-import { MDBPopover, MDBPopoverBody, MDBPopoverHeader, MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCollapse, MDBInput } from 'mdbreact'
+import { MDBModal, MDBModalHeader, MDBModalBody, MDBModalFooter, MDBPopover, MDBPopoverBody, MDBPopoverHeader, MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCollapse, MDBInput } from 'mdbreact'
 import item1 from '../img/meds-bio.jpeg'
 import { Popover, OverlayTrigger } from 'react-bootstrap'
 import phlogo from '../img/ph-flag.png'
 
+//semantic ui - rating
+import { Rating } from 'semantic-ui-react'
+import { stringify } from 'querystring'
+
+
 class MedicineItem extends Component{
-    state = {
-        collapseID: ""
-      }
+    constructor(props){
+        super(props)
+        this.state = {
+            collapseID: "",
+            modal: false,
+            selectedMed:[],
+            rating:0
+         
+        }
+        this.med_key = props
+    }
       toggleCollapse = collapseID => () => {
         this.setState(prevState => ({
           collapseID: prevState.collapseID !== collapseID ? collapseID : ""
         }));
       }
+    
+
+      handleChange = (e) => {
+          this.setState({ rating: e.target.value })
+      }
       
+      handleRating = (event) =>{
+        console.log('You have rated: ' +this.state.rating)
+        event.preventDefault();
+        const vrating = this.state.rating
+        console.log(vrating)
+
+        fetch('/add-rating',{
+            method: 'POST',
+            credentials: 'include',
+
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+           body: stringify({vrating})
+           
+        })
+        .then(res => res.json())
+        .then(data => {
+            this.setState({rating:data})
+        })  
+        
+      }
+
+      toggle = () => {
+        this.setState({
+          modal: !this.state.modal
+        });
+      }
+      async componentDidMount(){
+        const settings ={
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            }
+        };
+        try{
+            const selectedMed = await fetch(`/medicines/selectedMed/${this.props.match.params.item}`, settings);
+            const data = await selectedMed.json();
+            this.setState({selectedMed: data[0]}); 
+        }catch(err) {
+            console.log(err);
+        }
+ 
+    }
+    
     render(){
         const popover = (
             <Popover id="popover-basic">
@@ -24,6 +88,8 @@ class MedicineItem extends Component{
               </Popover.Content>
             </Popover>
           );
+          const { rating } = this.state
+          const selectedItem =  this.state.selectedMed;
         return(
             <div>
                 <Breadcrumb bheader="Over the Counter Collection" bcurrent="Biogesic" />
@@ -37,48 +103,63 @@ class MedicineItem extends Component{
                         </MDBCol>
                         <MDBCol>
                         <OverlayTrigger trigger="hover" placement="top" overlay={popover}>
-                            <h2 className="med-item-name">Biogesic</h2>
+                            <h2 className="med-item-name">{selectedItem.name}</h2>
                         </OverlayTrigger>
-                            <h5 className="grey-text">Ibufrofen Paracetamol</h5>
+                            <h5 className="grey-text">{selectedItem.generic_name}</h5>
                             <h3 className="med-prod-info">Product Info</h3>
                             <p className="med-info">
-                                Gives relief
-                                from colds and its symptoms; including 
-                                runny or stuffy nose, 
-                                post nasal drip, allergic rhinitis, fever, flu, 
-                                headache and body aches.
+                                {selectedItem.info}
                             </p>
                             <MDBCollapse id="basicCollapse" isOpen={this.state.collapseID}>
                             <h3 className="med-prod-info-2">Dosage</h3>
                             <p>
-                            TAB. Adult & Children- >12yrs:
-                            1 tab, SYRUP. Children- >12yrs: 15ml,
-                            12yrs ranging from 2.5-7.5ml
-                            depending on ages,
-                            DROPS- 1-2yrs: 1.5-2ml,
-                            7-11mos: 1.25-1.5ml, 
-                            4-6mos: 1-1.25ml, birth-3mos: 0.75-1ml.
-                            TO BE TAKE 4 TIMES DAILY
+                            {selectedItem.dosage}
                             </p>
                             <h3 className="med-prod-info-2">Shape</h3>
-                            <p>( 0.662" x 0.300" 
-                            elliptical-shaped ), oblong
+                            <p>
+                            {selectedItem.shape}
                             </p>
                             <h3 className="med-prod-info-2">Brand</h3>
-                            <p>Neozep Forte</p>
+                            <p>{selectedItem.brand}</p>
                             </MDBCollapse>
                             <MDBBtn size="sm" onClick={this.toggleCollapse("basicCollapse")} outline color="primary">Read More</MDBBtn>
                             <br/>
-                            <MDBBtn size="" className="btn-cart" color="primary">Add to cart</MDBBtn>
+                            
+                            <MDBBtn size="" onClick={this.toggle} className="btn-cart" color="primary">Add to cart</MDBBtn>
                         </MDBCol>
                     </MDBRow>
-                    {/* <MDBRow>
-                        <MDBCol className="margin-cart">
-                        
-                        </MDBCol>
-                    </MDBRow> */}
                 </MDBContainer>
             </div>
+            {/*
+            ========== MODALS/ ALERT DIALOG =====
+             */}
+
+            <MDBContainer>
+            <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
+                <MDBModalHeader toggle={this.toggle}></MDBModalHeader>
+                <MDBModalBody>
+                    <form onSubmit={this.handleRating}>
+                    <div className="text-center">
+                        <div>Rating: {rating}</div>
+                        <input
+                        type='range'
+                        min={0}
+                        max={5}
+                        value={rating}
+                        onChange={this.handleChange}
+                        />
+                        <br />
+                        <Rating rating={rating} maxRating={5} />
+                    </div>
+                    </form>
+                </MDBModalBody>
+                <MDBModalFooter>
+                <MDBBtn color="success" type="submit">Submit</MDBBtn>
+                <MDBBtn color="secondary" onClick={this.toggle}>Close</MDBBtn>
+                
+                </MDBModalFooter>
+            </MDBModal>
+            </MDBContainer>
             </div>
         )
     }
