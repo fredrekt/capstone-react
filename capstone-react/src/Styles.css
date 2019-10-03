@@ -348,6 +348,15 @@ strong#nav-brand{
 .icon-m{
     margin-right: 2%;
 }
+
+/* 
+========= Error Handling ====
+*/ 
+.error-h{
+    font-size: 16px;
+    margin-left: 2%;
+}
+
 /* Login Component Ends */
 
 /* Register Component Starts */
