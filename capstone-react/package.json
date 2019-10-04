@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "bs-stepper": "^1.7.0",
     "formik": "^1.5.8",
     "mdbootstrap": "^4.8.9",
     "mdbreact": "^4.19.2",
