@@ -11,6 +11,7 @@ class Navbar extends React.Component {
     this.state = {
       collapse: false,
       isWideEnough: false,
+      cart: []
     };
     this.onClick = this.onClick.bind(this);
   }
@@ -29,6 +30,23 @@ class Navbar extends React.Component {
     auth.logout()
     window.location.reload()
   }
+
+  async componentDidMount(){
+    const settings ={
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        }
+    };
+    try{
+        const selectedMed = await fetch(`/cart`, settings);
+        const data = await selectedMed.json();
+        this.setState({cart: data}); 
+    }catch(err) {
+        console.log(err);
+    }
+}
 
 
   render() {
@@ -66,7 +84,7 @@ class Navbar extends React.Component {
                       {
                         /* <MDBNavLink style={{color:this.state.color}}  className="nav-option" to="/sign-in"><MDBIcon size="lg" icon="shopping-cart" /><MDBBadge color="danger" className="ml-2">0</MDBBadge></MDBNavLink> */}
                       <Link className="white-text" to="/cart">
-                        <MDBIcon size="lg" icon="shopping-cart" /><MDBBadge color="danger" className="ml-2">0</MDBBadge>
+                        <MDBIcon size="lg" icon="shopping-cart" /><MDBBadge color="danger" className="ml-2">{this.state.cart.length}</MDBBadge>
                       </Link>
                     </MDBDropdownToggle>
                     <MDBDropdownMenu>
