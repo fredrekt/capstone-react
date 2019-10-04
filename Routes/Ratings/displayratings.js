@@ -2,17 +2,15 @@ const express = require('express')
 const conn = require('../../connection')
 const Router = express.Router()
 
-Router.use(express.json());
-Router.use(express.urlencoded({ extended: true }));
 
-Router.post('/', (req,res) =>{
-    const { username,password } = req.body;
-    const getUser = `SELECT * FROM users WHERE username='${username}' AND password='${password}'`;
-    conn.query(getUser, (err, results) =>{
+Router.get('/:medID', (req,res) =>{
+    const med_id = req.params.medID;
+    console.log(med_id)
+    const getRating = "select AVG(rating) from ratings where med_id ='"+med_id+"' " 
+    conn.query(getRating, (err, rows) =>{
         if(err) throw err
-        req.session.username = results[0].username;
-        console.log('this is session:',req.session.username)
-        res.json(results).status(200);
+        res.send(rows)
+        console.log(rows)
     });       
 });
 
