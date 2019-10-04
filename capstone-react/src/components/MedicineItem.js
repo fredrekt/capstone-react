@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Breadcrumb from './Breadcrumb'
-import { MDBModal, MDBModalHeader, MDBModalBody, MDBModalFooter, MDBPopover, MDBPopoverBody, MDBPopoverHeader, MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCollapse, MDBInput } from 'mdbreact'
+import { MDBIcon, MDBModal, MDBModalHeader, MDBModalBody, MDBModalFooter, MDBPopover, MDBPopoverBody, MDBPopoverHeader, MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCollapse, MDBInput } from 'mdbreact'
 import item1 from '../img/meds-bio.jpeg'
 import { Popover, OverlayTrigger } from 'react-bootstrap'
 import phlogo from '../img/ph-flag.png'
@@ -41,7 +41,6 @@ class MedicineItem extends Component{
         fetch(`/add-rating/${this.state.selectedMed.med_id}`,{
             method: 'POST',
             credentials: 'include',
-
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
             },
@@ -77,6 +76,12 @@ class MedicineItem extends Component{
         }
  
     }
+    // componentDidMount(){
+    //     fetch(`/med-rating/${this.props.allmeds.med_id}`)
+    //     .then(res => res.json())
+    //     .then(ratingmed => this.setState({ratingmed}))
+    //     console.log('this is the average',this.state.ratingmed)
+    // }
     
     render(){
         const popover = (
@@ -105,7 +110,13 @@ class MedicineItem extends Component{
                             <h2 className="med-item-name">{selectedItem.name}</h2>
                         </OverlayTrigger>
                             <h5 className="grey-text">{selectedItem.generic_name}</h5>
-                            <img className="img-price" src={phlogo} />
+                            <div className="container-img-shit">
+                                <h3 className="img-price-txt">
+                                <img className="img-price" src={phlogo} />
+                                <span>&#8369;</span>
+                                {selectedItem.price}
+                            </h3>
+                            </div>
                             <h3 className="med-prod-info">Product Info</h3>
                             <p className="med-info">
                                 {selectedItem.info}
@@ -139,6 +150,13 @@ class MedicineItem extends Component{
             <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
                 <MDBModalHeader toggle={this.toggle}></MDBModalHeader>
                 <MDBModalBody>
+                    <div className="text-center blue-text">
+                    <   MDBIcon size="5x" icon="pills" />
+                    </div>
+                    <h3 className="text-center">Do you like {selectedItem.name}?</h3>
+                    <div className="text-center grey-text">
+                        <p>Please express your emotions through stars language</p>
+                    </div>
                     <div className="text-center">
                         <div>Rating: {rating}</div>
                         <input
@@ -161,6 +179,10 @@ class MedicineItem extends Component{
             </MDBModal>
             </form>
             </MDBContainer>
+
+            {/* 
+            =============== ENDING OF MODAL =============== 
+            */}
             </div>
         )
     }
