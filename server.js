@@ -8,6 +8,7 @@ const allergyRoute = require('./Routes/AllergyMeds')
 const searchMeds = require('./Routes/searchMeds')
 const herbalMeds = require('./Routes/herbals')
 const users = require('./Routes/users')
+const register = require('./Routes/register')
 const login = require('./Routes/login')
 const medsitem = require('./Routes/medicineitem')
 const session = require('express-session'); 
@@ -15,6 +16,9 @@ const session = require('express-session');
 //ratings 
 const addrating = require('./Routes/Ratings/addrating')
 const displayratings = require('./Routes/Ratings/displayratings')
+
+//cart
+const cartRouter = require('./Routes/cart');
 
 var app = express()
 // app.use(bodyParser.urlencoded({ extended: false}))
@@ -62,6 +66,9 @@ app.use("/herbal",herbalMeds)
 //user to session route
 app.use("/users",users)
 
+//register route
+app.use("/register",register)
+
 //login route
 app.use("/login",login)
 
@@ -75,5 +82,8 @@ app.use('/add-rating',addrating)
 
 //display rating on a medicine
 app.use('/med-rating',displayratings)
+
+//cart route
+app.use('/cart', cartRouter)
 
 app.listen(3001)
