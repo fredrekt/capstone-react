@@ -582,6 +582,7 @@ strong#nav-brand{
 }
 .cart-item-container{
     margin-top: -5%;
+    margin-bottom: 10%;
 }
 .cart-item-name{
     font-family: 'Roboto', sans-serif;
