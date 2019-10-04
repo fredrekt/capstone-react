@@ -356,6 +356,10 @@ strong#nav-brand{
     font-size: 16px;
     margin-left: 2%;
 }
+.success-h{
+    font-size: 16px;
+    margin-left: 2%;
+}
 
 /* Login Component Ends */
 
@@ -464,7 +468,7 @@ strong#nav-brand{
     font-family: 'Montserrat', sans-serif;
     font-weight: bold; 
     font-size: 30px;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 .med-prod-info-2{
     font-family: 'Montserrat', sans-serif;
@@ -490,9 +494,16 @@ strong#nav-brand{
     font-style: bold;
     width:90%; 
 }
+.container-img-shit{
+    margin-top: 5%;
+}
 .img-price{
-    width:30%;
-    height:30%;
+    margin-top: 0%;
+    width:15%;
+    height:15%;
+}
+.img-price-txt{
+    font-size: 30px;
 }
 /* Medicine Item Component Ends */
 
