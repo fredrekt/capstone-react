@@ -29,10 +29,12 @@ class Medicines extends Component{
             aMeds:[],
             herbal:[],
             search: [],
-            value: ''
+            value: '',
+            ratingmed: 0
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.med_id = props;
     }
     handleChange(event) {
         this.setState({value: event.target.value});
@@ -105,6 +107,14 @@ class Medicines extends Component{
         .then(res => res.json())
         .then(herbal => this.setState({herbal}))
 
+        //  fetch(`/med-rating/${this.med_id.allmeds.med_id}`)
+        //  .then(res => res.json())
+        //  .then(ratingmed => this.setState({ratingmed}))
+        //  console.log('this is the average',this.state.ratingmed)
+
+        // fetch(`/med-rating`)
+        // .then(res => res.json())
+        // .then(ratingmed => this.setState({ratingmed}))
     } 
     searchMeds = () =>{
         fetch('/search-meds')
@@ -266,6 +276,7 @@ class Medicines extends Component{
         //         </div>
         //     )
         // }
+ 
         return(
             <div>
            <MDBCarousel
@@ -511,11 +522,17 @@ class Medicines extends Component{
                                         </div>
                                     </MDBCardText>
                                     </MDBCardBody>
+                                    
                                 </MDBCard>
                                 </Link>
                               
                             </MDBCol>
                             )}
+                            {/* {this.state.ratingmed.map(ratingmed =>{
+                                <p key={ratingmed.med_id}>{ratingmed.rating}</p>
+                            })} */}
+                            
+                            {/* {this.state.ratingmed} */}
                             {/* <MDBCol>
                             <a className="meds-card-link" href="/meds/item">
                                 <MDBCard>
