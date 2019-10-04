@@ -18,7 +18,8 @@
     "react-scripts": "3.1.1",
     "react-scroll-up-button": "^1.6.4",
     "react-toastify": "^5.4.0",
-    "semantic-ui-react": "^0.88.1"
+    "semantic-ui-react": "^0.88.1",
+    "yup": "^0.27.0"
   },
   "scripts": {
     "start": "react-scripts start",
