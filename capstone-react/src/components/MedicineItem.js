@@ -76,12 +76,22 @@ class MedicineItem extends Component{
         }
  
     }
-    // componentDidMount(){
-    //     fetch(`/med-rating/${this.props.allmeds.med_id}`)
-    //     .then(res => res.json())
-    //     .then(ratingmed => this.setState({ratingmed}))
-    //     console.log('this is the average',this.state.ratingmed)
-    // }
+    addToCart = () =>{
+        fetch(`/cart/addToCart/${this.state.selectedMed.med_id}`, {
+       method: 'POST',
+       headers: {
+           Accept: 'application/json',
+           'Content-Type': 'application/json'
+       }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Request succeeded with JSON response', data);
+        })
+        .catch(error => {
+            console.log('Request failed', error);
+        });
+    }
     
     render(){
         const popover = (
@@ -136,7 +146,7 @@ class MedicineItem extends Component{
                             <MDBBtn size="sm" onClick={this.toggleCollapse("basicCollapse")} outline color="primary">Read More</MDBBtn>
                             <br/>
                             
-                            <MDBBtn size="" onClick={this.toggle} className="btn-cart" color="primary">Add to cart</MDBBtn>
+                            <MDBBtn size="" onClick={this.addToCart} className="btn-cart" color="primary">Add to cart</MDBBtn>
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>
