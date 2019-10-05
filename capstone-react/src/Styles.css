@@ -3,6 +3,7 @@
 */
 
 
+
 /* MDB Navbar Starts */
     .right{
         margin-left: auto;
@@ -634,3 +635,30 @@ strong#nav-brand{
     margin-bottom: 10%;
 }
 /* Payment Method Component Ends */
+
+
+/*
+=============== ADMIN SIDE ============
+*/
+
+/*
+============ Admin Component ==========
+*/
+.icon-fb{
+    margin-right: 2%;
+}
+.admin-login-d-header{
+    color: #00C851;
+    font-size: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+.admin-sign-up-header{
+    color: #33b5e5;
+    font-size: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+
