@@ -8,7 +8,7 @@ Router.use(express.urlencoded({ extended: true }));
 Router.post('/addtoCart/:item_id', (req,res) =>{
     const date = new Date().toISOString().slice(0, 19).replace('T', ' ');
     const getMedicine = `SELECT * FROM medicines WHERE med_id = ${req.params.item_id}`;
-    const user_id = req.session.username;
+    //const user_id = req.session.username;
 
     conn.query(getMedicine, (err, resultMed) =>{
         if(err)throw err;
@@ -16,8 +16,8 @@ Router.post('/addtoCart/:item_id', (req,res) =>{
         const existCart = `SELECT * FROM orders WHERE med_id = ${med_id}`;
         conn.query(existCart, (err, resultExist) =>{
            
-    
-        const addCart = `INSERT INTO orders (med_id, user_id,date_ordered,price) VALUES (${req.params.item_id},'${user_id}' , '${date}',${resultMed[0].price})`;
+        
+        const addCart = `INSERT INTO orders (med_id, user_id,date_ordered,price) VALUES (${req.params.item_id},'${req.session.username}' , '${date}',${resultMed[0].price})`;
         if(resultExist){
             conn.query(addCart, () =>{ 
             if(err) throw err

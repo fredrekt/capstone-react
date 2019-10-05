@@ -16,7 +16,7 @@ Router.post("/:med_id",(req, res)=>{
         
     conn.query(qry,(err, rows, fields)=>{
             if(!err){
-                console.log("fetched rows")
+                console.log("added rating")
                 //res.send(rows)
                 
             }

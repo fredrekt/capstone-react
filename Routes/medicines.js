@@ -5,7 +5,7 @@ const Router = express.Router()
 Router.get("/",(req, res)=>{
     conn.query("select * from medicines where category= 'vitamins'  ",(err, rows, fields)=>{
         if(!err){
-            console.log('Medicines JSON is here')
+            console.log('Vitamins are here')
             // res.send("<h1>"+rows[1].name+"</h1>")
             //console.log(rows)
             res.send(rows)
