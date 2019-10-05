@@ -90,6 +90,8 @@ class MedicineItem extends Component{
         })
         .catch(error => {
             console.log('Request failed', error);
+            alert('added to cart')
+            window.location.reload()
         });
     }
     
