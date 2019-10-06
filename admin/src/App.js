@@ -9,6 +9,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import AddProducts from './AddProducts';
 import Login from './components/Login';
 import OrderedProducts from './components/OrderedProducts';
+import ProductInventory from './components/ProductInventory';
+import Account from './components/Account';
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +20,8 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/add-products" component={AddProducts} />
             <Route path="/ordered-products" component={OrderedProducts} />
+            <Route path="/show-inventory" component={ProductInventory} />
+            <Route path="/account" component={Account} />
             <Route path="/login" component={Login}/>
           </Switch>
       </div>
