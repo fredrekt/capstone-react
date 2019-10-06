@@ -3,6 +3,7 @@
 */
 
 
+
 /* MDB Navbar Starts */
     .right{
         margin-left: auto;
@@ -348,6 +349,19 @@ strong#nav-brand{
 .icon-m{
     margin-right: 2%;
 }
+
+/* 
+========= Error Handling ====
+*/ 
+.error-h{
+    font-size: 16px;
+    margin-left: 2%;
+}
+.success-h{
+    font-size: 16px;
+    margin-left: 2%;
+}
+
 /* Login Component Ends */
 
 /* Register Component Starts */
@@ -455,7 +469,7 @@ strong#nav-brand{
     font-family: 'Montserrat', sans-serif;
     font-weight: bold; 
     font-size: 30px;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 .med-prod-info-2{
     font-family: 'Montserrat', sans-serif;
@@ -480,6 +494,17 @@ strong#nav-brand{
     font-size: 50px;
     font-style: bold;
     width:90%; 
+}
+.container-img-shit{
+    margin-top: 5%;
+}
+.img-price{
+    margin-top: 0%;
+    width:15%;
+    height:15%;
+}
+.img-price-txt{
+    font-size: 30px;
 }
 /* Medicine Item Component Ends */
 
@@ -558,6 +583,7 @@ strong#nav-brand{
 }
 .cart-item-container{
     margin-top: -5%;
+    margin-bottom: 10%;
 }
 .cart-item-name{
     font-family: 'Roboto', sans-serif;
@@ -609,3 +635,30 @@ strong#nav-brand{
     margin-bottom: 10%;
 }
 /* Payment Method Component Ends */
+
+
+/*
+=============== ADMIN SIDE ============
+*/
+
+/*
+============ Admin Component ==========
+*/
+.icon-fb{
+    margin-right: 2%;
+}
+.admin-login-d-header{
+    color: #00C851;
+    font-size: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+.admin-sign-up-header{
+    color: #33b5e5;
+    font-size: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+
