@@ -29,7 +29,9 @@ const SideNavbar = () =>{
                <MDBIcon size="lg" icon="warehouse"/>
             </NavIcon>
             <NavText>
+                <Link to="/login">
                     Manage Products
+                </Link>
             </NavText>
             <NavItem eventKey="charts/linechart">
                 <NavText>
