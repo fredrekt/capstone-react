@@ -3,6 +3,7 @@ import React from 'react'
 // Be sure to include styles at some point, probably during your bootstraping
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import { Link } from 'react-router-dom'
+import { MDBIcon } from 'mdbreact'
 
 const SideNavbar = () =>{
     return(
@@ -25,7 +26,7 @@ const SideNavbar = () =>{
         </NavItem>
         <NavItem eventKey="charts">
             <NavIcon>
-                <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+               <MDBIcon size="lg" icon="warehouse"/>
             </NavIcon>
             <NavText>
                     Manage Products
@@ -41,8 +42,18 @@ const SideNavbar = () =>{
                 <NavText>
                 Ordered Products
                 </NavText>
-            </NavItem>
+            </NavItem>     
         </NavItem>
+
+        <NavItem style={{'margin-top':'840%'}} eventKey="charts/barchart">
+                <NavIcon>
+                    <MDBIcon size="lg" icon="sign-out-alt" />
+                </NavIcon>
+                <NavText>
+                Ordered Products
+                </NavText>
+            </NavItem>
+
     </SideNav.Nav>
 </SideNav>
     )
