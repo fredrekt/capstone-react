@@ -6,6 +6,11 @@ import { Redirect } from "react-router-dom";
 import GoogleLogin from 'react-google-login';
 import auth from "../auth/auth";
 
+import { toast, ToastContainer } from 'react-toastify'
+
+import 'react-toastify/dist/ReactToastify.css';
+
+
 class Login extends Component {
     constructor(props){
         super(props);
@@ -23,8 +28,36 @@ class Login extends Component {
             googlename: 'sign in with google'
         }
     }
+    //Toastify Error Handling
 
+    notifySuccess = () => {
+        toast.success(
+        <div>
+        <MDBIcon size='lg' icon="check-circle" />
+        <span className="success-h"> Welcome! User has been verified!</span></div>, {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose:1200
+          });
+    }
 
+    notifyErrorUser = () =>{
+        toast.error(<div>
+            <MDBIcon size='lg' icon="shield-alt" />
+            <span className="error-h"> Sorry, username is incorrect!</span></div>, {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 1300
+
+          });
+    }
+    notifyErrorPassword = () =>{
+        toast.error(<div>
+            <MDBIcon size='lg' icon="lock" />
+            <span className="error-h"> Sorry, password is incorrect</span></div>, {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose:1300
+          });
+    }
+    
     async componentDidMount(){
         const settings ={
             method: 'GET',
@@ -62,9 +95,14 @@ class Login extends Component {
 
     googleResponse = (response) =>{
         console.log(response);
-    }
+        auth.login(() =>{
+            this.state.location.history.push("/medicines-shop");
+            window.location.reload()
+        });
+        this.setSubmitting(true);
+    } 
 
-   
+
 
 render(){
     const existUser = this.state.existUser;       
@@ -83,30 +121,50 @@ render(){
         var foundPassword = existUser.find(obj => obj.password === values.password);
             this.setState({user: values});
         if(!foundUsername){
+            setTimeout(()=>{
             this.setState({loginname:
                 <div class="spinner-border white-text" role="status">
-        <span class="sr-only">Loading...</span>
-      </div>});
+                    <span class="sr-only">Loading...</span>
+                </div>});
+            }, 500)
             setTimeout(() => {
+                this.notifyErrorUser()
                 this.setState({loginname: 'login'});
                 setSubmitting(false);
-            }, 1000);
+            }, 1300);
         }else if(!foundPassword ){
+            setTimeout(()=>{
             this.setState({loginname: 
                 <div class="spinner-border white-text" role="status">
-        <span class="sr-only">Loading...</span>
-      </div>});
+                    <span class="sr-only">Loading...</span>
+                </div>});
+            },500)
             setTimeout(() => {
                 this.setState({ loginname: 'login' });
+                this.notifyErrorPassword()
                 setSubmitting(false);
-            }, 1000);
+            }, 1300);
         }else{
+            this.setState({
+                loginname: 
+                <div class="spinner-border white-text" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            })
+            setTimeout(()=>{
+                this.notifySuccess()
+            },800)
+       
+        
+            setTimeout(()=>{
+                
             this.loginUser(values);
             auth.login(() =>{
                 location.history.push("/medicines-shop");
                 window.location.reload()
             });
             setSubmitting(true);
+        },2000)
         
         }
             
@@ -148,6 +206,7 @@ render(){
                             group
                             type="text"
                             validate
+                            
                             error="wrong"
                             success="right"
                             name="username"
@@ -159,6 +218,7 @@ render(){
                             label="Your password"
                             icon="lock"
                             group
+                            
                             type="password"
                             name="password"
                             onChange={handleChange}
@@ -194,10 +254,11 @@ render(){
                         onFailure={this.googleResponse}
                      
                         />
-
+                           
                         
                         </div>
                     </form>
+                    <ToastContainer />
                     </MDBCardBody>
                 </MDBCard>
                 </MDBCol>
