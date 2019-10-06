@@ -19,7 +19,7 @@ const SideNavbar = () =>{
                 <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
             </NavIcon>
             <NavText>
-                <Link to="#/home">
+                <Link to="/">
                     Home
                 </Link>
             </NavText>
@@ -42,7 +42,9 @@ const SideNavbar = () =>{
             </NavItem>
             <NavItem eventKey="charts/barchart">
                 <NavText>
-                Ordered Products
+                    <Link to="/ordered-products">
+                         Ordered Products
+                    </Link>
                 </NavText>
             </NavItem>     
         </NavItem>
