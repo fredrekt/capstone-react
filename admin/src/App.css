@@ -20,3 +20,15 @@
 .App-link {
   color: #09d3ac;
 }
+
+/* 
+=============== Add Products Component =========
+*/
+
+/* AddProducts Component Starts */
+.admin-prod-h{
+  padding: 40px;
+  margin-left: -5%;
+}
+
+/* AddProducts Component Ends */
