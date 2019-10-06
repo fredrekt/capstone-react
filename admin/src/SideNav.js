@@ -40,23 +40,56 @@ const SideNavbar = () =>{
                     </Link>
                 </NavText>
             </NavItem>
+
             <NavItem eventKey="charts/barchart">
                 <NavText>
                     <Link to="/ordered-products">
                          Ordered Products
                     </Link>
                 </NavText>
-            </NavItem>     
-        </NavItem>
+            </NavItem>    
 
-        <NavItem style={{'margin-top':'840%'}} eventKey="charts/barchart">
-                <NavIcon>
-                    <MDBIcon size="lg" icon="sign-out-alt" />
-                </NavIcon>
+            <NavItem eventKey="charts/chart">
                 <NavText>
-                Ordered Products
+                    <Link to="/show-inventory">
+                        Product Inventory
+                    </Link>
                 </NavText>
             </NavItem>
+        </NavItem>
+
+        <NavItem eventKey="charts/shipping">
+            <NavIcon>
+                <MDBIcon size="lg" icon="shipping-fast" />
+            </NavIcon>
+            <NavText>
+                <Link to="/shipping">
+                    Shipping / Delivery
+                </Link>
+            </NavText>
+        </NavItem>
+
+        <NavItem eventKey="charts/accounts">
+            <NavIcon>
+                <MDBIcon size="lg" icon="address-book" />
+            </NavIcon>
+            <NavText>
+                <Link to="/account">
+                    Account Settings
+                </Link>
+            </NavText>
+        </NavItem>
+
+        <NavItem eventKey="charts/logout">
+            <NavIcon>
+                <MDBIcon size="lg" icon="sign-out-alt" />
+            </NavIcon>
+            <NavText>
+                <Link to="/">
+                    Logout
+                </Link>
+            </NavText>
+        </NavItem>
 
     </SideNav.Nav>
 </SideNav>
