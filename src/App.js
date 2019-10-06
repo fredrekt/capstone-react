@@ -14,6 +14,10 @@ import MedicineItem from './components/MedicineItem'
 import Page404 from './components/Page404'
 import Cart from './components/Cart'
 import PaymentMethod from './components/PaymentMethod'
+//admin side
+import AdminLogin from './admin/AdminLogin'
+import AdminReg from './admin/AdminRegistration'
+import Admin from './admin/AdminController'
 import { ProtectedRoute } from './auth/protectedroute'
 
 function App() {
@@ -29,9 +33,12 @@ function App() {
             <Route path="/sign-in" component={Login}/>
             <Route path="/sign-up" component={Register}/>
             <ProtectedRoute path="/medicines-shop" component={Medicines}/>
-            <ProtectedRoute path="/meds/item" component={MedicineItem}/>
+            <ProtectedRoute path="/meds/:item" component={MedicineItem}/>
             <ProtectedRoute path="/cart" component={Cart}/>
             <ProtectedRoute path="/payment-method" component={PaymentMethod} />
+            <Route path="/admin-login" component={AdminLogin} />
+            <Route path="/admin-register" component={AdminReg} />
+            <Route path="/admin" component={Admin} />
             <Route path="*" component={Page404}/>
           </Switch>
         <Footer/>
