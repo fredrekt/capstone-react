@@ -2,8 +2,19 @@ import React, { Component } from 'react'
 import { MDBContainer, MDBTableHead, MDBTable, MDBTableBody, MDBBtn } from 'mdbreact'
 
 class ProductInventory extends Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            products: []
+        }
+    }
+    componentDidMount(){
+        fetch('/all-meds')
+        .then(res => res.json())
+        .then(data => this.setState({products:data}))
+    }
     render(){
-        return(
+        return( 
            <div style={{'margin-left':'15%'}}>
                 <MDBContainer>
                 <h1 className="admin-prod-h text-left">
@@ -22,17 +33,19 @@ class ProductInventory extends Component{
                                 </tr>
                             </MDBTableHead>
                             <MDBTableBody>
-                                <tr>
-                                <td>1</td>
-                                <td>Biogesic</td>
+                                {this.state.products.map(products =>
+                                <tr key={products.med_id}>
+                                <td>{products.med_id}</td>
+                                <td>{products.name}</td>
                                 <td>	
-                                Ibuprofen with
-                                Paracetamol</td>
-                                <td>Alnix Plus</td>
-                                <td>Allergy</td>
-                                <td>23.00</td>
+                                {products.generic_name}
+                                </td>
+                                <td>{products.brand}</td>
+                                <td>{products.category}</td>
+                                <td>{products.price}</td>
                                 <td>100</td>
                                 </tr>
+                                )}
                                 <tr>
                                 <td>2</td>
                                 <td>Neosep</td>
