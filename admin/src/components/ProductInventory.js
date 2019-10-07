@@ -46,24 +46,6 @@ class ProductInventory extends Component{
                                 <td>100</td>
                                 </tr>
                                 )}
-                                <tr>
-                                <td>2</td>
-                                <td>Neosep</td>
-                                <td>Cetirizine diHCI</td>
-                                <td>Unilab</td>
-                                <td>Colds</td>
-                                <td>15</td>
-                                <td>25</td>
-                                </tr>
-                                <tr>
-                                <td>3</td>
-                                <td>Allerta</td>
-                                <td>Cetirizine</td>
-                                <td>Unilab</td>
-                                <td>Allergy</td>
-                                <td>15.00</td>
-                                <td>50</td>
-                                </tr>
                             </MDBTableBody>
                             </MDBTable>
                 </MDBContainer>
