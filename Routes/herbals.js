@@ -9,6 +9,7 @@ conn.query(qry,(err, rows, fields)=>{
         if(!err){
             console.log("fetched rows")
             //console.log(rows)
+            console.log(req.session.username)
             res.send(rows)
             
         }
