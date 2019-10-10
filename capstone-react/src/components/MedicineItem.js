@@ -9,6 +9,9 @@ import phlogo from '../img/ph-flag.png'
 import { Rating } from 'semantic-ui-react'
 import { stringify } from 'querystring'
 
+//Toastify 
+import { toast, ToastContainer } from 'react-toastify'
+
 
 class MedicineItem extends Component{
     constructor(props){
@@ -17,7 +20,9 @@ class MedicineItem extends Component{
             collapseID: "",
             modal: false,
             selectedMed:[],
-            rating:0
+            addtocartname: 'add to cart',
+            rating:0,
+            value: 0
          
         }
         this.med_key = props
@@ -51,7 +56,7 @@ class MedicineItem extends Component{
         .then(data => {
             this.setState({rating:data})
         })  
-        
+        window.location.reload()
       }
 
       toggle = () => {
@@ -76,13 +81,43 @@ class MedicineItem extends Component{
         }
  
     }
+ //Toastify Error Handling
+
+    notifySuccess = () => {
+        toast.success(
+        <div>
+        <MDBIcon size='lg' icon="check-circle" />
+        <span className="success-h"> Item has been added to cart!</span></div>, {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose:1500
+        });
+    }
+
+    successAddToCart = () =>{
+        this.setState({addtocartname:
+            <div class="spinner-border white-text" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        })
+        setTimeout(()=>{
+            this.notifySuccess()
+        },800)
+        setTimeout(()=>{
+            this.setState({addtocartname:'add to cart'})
+            this.toggle()
+        },1200)
+    }
+
     addToCart = () =>{
+        const qvalue = this.state.value
         fetch(`/cart/addToCart/${this.state.selectedMed.med_id}`, {
        method: 'POST',
        headers: {
-           Accept: 'application/json',
-           'Content-Type': 'application/json'
-       }
+          Accept: 'application/json',
+        //    'Content-Type': 'application/json'
+        "Content-Type": "application/x-www-form-urlencoded"
+       },
+       body: stringify({qvalue})
         })
         .then(response => response.json())
         .then(data => {
@@ -90,10 +125,16 @@ class MedicineItem extends Component{
         })
         .catch(error => {
             console.log('Request failed', error);
-            alert('added to cart')
-            window.location.reload()
+            this.successAddToCart()
         });
     }
+        decrease = () => {
+            this.setState({ value: this.state.value - 1 });
+        }
+    
+      increase = () => {
+        this.setState({ value: this.state.value + 1 });
+      }
     
     render(){
         const popover = (
@@ -113,9 +154,18 @@ class MedicineItem extends Component{
                 <MDBContainer>
                     <MDBRow>
                         <MDBCol>
-                            <img src={item1} alt=""/>
-                            <img className="med-option-container" src={item1}/>
-                            <img className="med-option-container-2" src={item1}/>
+                            <img style={{'width':'80%'}} src={selectedItem.image} alt=""/>
+                            {/* <img className="med-option-container" src={item1}/>
+                            <img className="med-option-container-2" src={item1}/> */}
+                            {/* <span className="med-prod-info-2">Quantity</span> */}
+                            {/* <div style={{'margin-left':'20%'}} className="text-center">
+                                <div className="def-number-input number-input">
+                                    <button onClick={this.decrease} className="minus"></button>
+                                    <input className="quantity" name="quantity" value={this.state.value} onChange={()=> console.log('change')}
+                                    type="number" />
+                                    <button onClick={this.increase} className="plus"></button>
+                                </div>
+                            </div> */}
                         </MDBCol>
                         <MDBCol>
                         <OverlayTrigger trigger="hover" placement="top" overlay={popover}>
@@ -147,8 +197,16 @@ class MedicineItem extends Component{
                             </MDBCollapse>
                             <MDBBtn size="sm" onClick={this.toggleCollapse("basicCollapse")} outline color="primary">Read More</MDBBtn>
                             <br/>
-                            
-                            <MDBBtn size="" onClick={this.addToCart} className="btn-cart" color="primary">Add to cart</MDBBtn>
+                            {/* <h3 className="med-prod-info-2">Quantity</h3> */}
+                            <span className="med-prod-info-2">Quantity</span>
+                            <div className="def-number-input number-input">
+                                <button onClick={this.decrease} className="minus"></button>
+                                <input className="quantity" name="quantity" value={this.state.value} onChange={()=> console.log('change')}
+                                type="number" />
+                                <button onClick={this.increase} className="plus"></button>
+                            </div>
+                                                
+                            <MDBBtn size="" onClick={this.addToCart} className="btn-cart" color="primary">{this.state.addtocartname}</MDBBtn>
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>
@@ -156,7 +214,7 @@ class MedicineItem extends Component{
             {/*
             ========== MODALS/ ALERT DIALOG =====
              */}
-
+            <ToastContainer />
             <MDBContainer>
             <form onSubmit={this.handleRating}>
             <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
