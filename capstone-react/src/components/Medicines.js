@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Breadcrumb from './Breadcrumb';
-import { MDBFormInline, MDBAlert, MDBIcon, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBRow, MDBCol ,MDBBtn, MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
+import { MDBFormInline, MDBAlert, MDBIcon, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBRow, MDBCol ,MDBBtn, MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer, MDBInput } from
 "mdbreact";
 import Carousel from './Carousel';
 import car1 from '../img/med-car-1.jpeg'
@@ -180,16 +180,16 @@ class Medicines extends Component{
                                 <MDBCol className="search-container" md="6">
                                     <div className="search-container">
                                         <form onSubmit={this.handleSubmit}>
-                                            <input
-                                            className="form-control form-control-sm ml-3 w-75"
-                                            style={{'width':'100%'}}
-                                            type="text" onChange={this.handleChange} 
-                                            placeholder="Did not find what you are looking for? Try me"
+                                            <MDBInput
+                                            icon="search"
+                                            style={{'width':'70%', 'border':'solid 1px white'}}
+                                            type="text" value={this.state.value} onChange={this.handleChange} 
+                                            label="Is this it?"
                                             />
-                                            <div style={{'margin-left':'30%'}}>
+                                            <div style={{'margin-left':'30%','margin-top':'-4%'}}>
                                                 <MDBBtn size="sm" type="submit" outline color="primary">search</MDBBtn>                        
                                             </div>
-                                            </form>
+                                        </form>
                                         </div>  
                                 </MDBCol>
                             </div>
@@ -200,7 +200,7 @@ class Medicines extends Component{
                                
                             <a key={searchs.med_id} className="meds-card-link" href="/meds/item">
                                 <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={searchs.image} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">
                                         {searchs.name}
@@ -342,153 +342,23 @@ class Medicines extends Component{
                     <MDBCol className="search-container" md="6">
                         <div className="search-container">
                         <form onSubmit={this.handleSubmit}>
-                            <input
-                            className="form-control form-control-sm ml-3 w-75"
-                            style={{'width':'100%'}}
+                            <MDBInput
+                            icon="search"
+                            style={{'width':'70%', 'border':'solid 1px white'}}
                             type="text" value={this.state.value} onChange={this.handleChange} 
-                            placeholder="Enter drug name or drug category, for what use, etc"
+                            label="Enter drug name or drug category, for what use, etc"
                             />
-                            <div style={{'margin-left':'30%'}}>
+                            <div style={{'margin-left':'30%','margin-top':'-4%'}}>
                                 <MDBBtn size="sm" type="submit" outline color="primary">search</MDBBtn>                        
                             </div>
                             </form>
                         </div>
-                        
                     </MDBCol>
                     </div>
-
-                    
-                
-
                 <Slide up>
                     <h1 className="med-otc-h">Over the Counter</h1>
                     <MDBContainer>
-                    {/* STARTS HERE ANG DISPLAY SA MEDS FROM DB */}
-                    {/* <h1>Med Name</h1>
-                    <ul>
-                        {this.state.meds.map(med =>
-                        <li key={med.med_id}>{med.name}</li>
-                        )}
-                    </ul>
-                    <h1>Generic Name</h1>
-                    <ul>
-                        {this.state.meds.map(med =>
-                        <li key={med.med_id}>{med.generic_name}</li>
-                        )}
-                    </ul>
-                    <h1>Brand</h1>
-                    <ul>
-                        {this.state.meds.map(med =>
-                        <li key={med.med_id}>{med.brand}</li>
-                        )}
-                    </ul>
-                    <h1>Shape</h1>
-                    <ul>
-                        {this.state.meds.map(med =>
-                        <li key={med.med_id}>{med.shape}</li>
-                        )}
-                    </ul>
-                    <h1>Dosage</h1>
-                    <ul>
-                        {this.state.meds.map(med =>
-                        <li key={med.med_id}>{med.dosage}</li>
-                        )}
-                    </ul>
-                    <h1>Description</h1>
-                    <ul>
-                        {this.state.meds.map(med =>
-                        <li key={med.med_id}>{med.info}</li>
-                        )}
-                    </ul> */}
-                    {/* ENDS HERE ANG DISPLAY SA MEDS FROM DB */}
                         <MDBRow>
-                            {/* <MDBCol>
-                                <a className="meds-card-link" href="/meds/item">
-                                <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
-                                    <MDBCardBody>
-                                    <MDBCardTitle>
-                                        {this.state.meds.map(med =>
-                                        
-                                        <h3 key={med.med_id} className="med-item-header">
-                                        {med.name}
-                                        
-                                        </h3>
-                                        )}
-                                        </MDBCardTitle>
-                                    <MDBCardText>
-                                        
-                                        <div className="med-content-container">
-                                            <div className="grey-text text-center">
-                                            
-                                            <p className="med-sub-h">
-                                                  
-                                            {this.state.meds.map(med =>
-                                            <p key={med.med_id}>
-                                            <MDBIcon icon="tags" />{med.name}
-                                                </p>       
-                                           
-                                            )}
-
-                                                </p>
-                                            </div>
-                                            <div className="prizeandlogo-container">
-                                                <div className="black-text text-center">
-                                                    <h4 className="med-price">
-                                                    {this.state.meds.map(med =>
-                                            <p key={med.med_id}>
-                                            <img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> {med.price}
-                                                </p>       
-                                           
-                                            )}
-
-                                                </h4> 
-                                                </div>    
-                                            </div>
-                                        </div>
-                                    </MDBCardText>
-                                    </MDBCardBody>
-                                </MDBCard>
-                                </a>
-                            </MDBCol>
-                            <MDBCol>
-                            <a className="meds-card-link" href="/meds/item">
-                                <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
-                                    <MDBCardBody>
-                                    <MDBCardTitle>
-                                        {this.state.meds2.map(med2=> 
-                                        <h3 key={med2.med_id} className="med-item-header">
-                                            {med2.name}
-                                        </h3>
-                                        )}
-                                        </MDBCardTitle>
-                                    <MDBCardText>
-                                        <div className="med-content-container">
-                                            <div className="grey-text text-center">
-                                                {this.state.meds2.map(med2 =>
-                                                
-                                            <p key={med2.med_id} className="med-sub-h">
-                                                <MDBIcon icon="tags" />
-                                                    {med2.brand}
-                                                </p>
-                                                )}
-                                            </div>
-                                            <div className="prizeandlogo-container">
-                                                <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 
-                                                    5.00</h4> 
-                                                </div>    
-                                            </div>
-                                        </div>
-                                    </MDBCardText>
-                                    </MDBCardBody>
-                                </MDBCard>
-                                </a>
-                            </MDBCol> */}
-                            
-        
-
                             {this.state.allmeds.map(allmeds => 
                             <MDBCol style={{'margin-bottom':'5%'}} md="6" lg="3">
                                
@@ -500,7 +370,7 @@ class Medicines extends Component{
                             className="meds-card-link"
                             >
                                 <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={allmeds.image} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">
                                         {allmeds.name}
@@ -520,6 +390,10 @@ class Medicines extends Component{
                                                 </div>    
                                             </div>
                                         </div>
+                                        <div className="text-center yellow-text">
+                                                <MDBIcon icon="star" />
+                                                Rating:{allmeds.ratingavg}
+                                            </div>
                                     </MDBCardText>
                                     </MDBCardBody>
                                     
@@ -528,260 +402,25 @@ class Medicines extends Component{
                               
                             </MDBCol>
                             )}
-                            {/* {this.state.ratingmed.map(ratingmed =>{
-                                <p key={ratingmed.med_id}>{ratingmed.rating}</p>
-                            })} */}
+                          
                             
-                            {/* {this.state.ratingmed} */}
-                            {/* <MDBCol>
-                            <a className="meds-card-link" href="/meds/item">
-                                <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
-                                    <MDBCardBody>
-                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
-                                    <MDBCardText>
-                                        <div className="med-content-container">
-                                            <div className="grey-text text-center">
-                                            <p className="med-sub-h">
-                                                <MDBIcon icon="tags" />
-                                                    Neozep Forte
-                                                </p>
-                                            </div>
-                                            <div className="prizeandlogo-container">
-                                                <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
-                                                </div>    
-                                            </div>
-                                        </div>
-                                    </MDBCardText>
-                                    </MDBCardBody>
-                                </MDBCard>
-                                </a>
-                            </MDBCol> */}
                         </MDBRow>
                     </MDBContainer>
-{/*                  
-                    <h1 className="med-otc-h-2">Herbal Collection</h1>
-                    <MDBContainer>
-                        <MDBRow>
-                            <MDBCol>
-                            <a className="meds-card-link" href="/meds/item">
-                                <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
-                                    <MDBCardBody>
-                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
-                                    <MDBCardText>
-                                        <div className="med-content-container">
-                                            <div className="grey-text text-center">
-                                            <p className="med-sub-h">
-                                                <MDBIcon icon="tags" />
-                                                    Neozep Forte
-                                                </p>
-                                            </div>
-                                            <div className="prizeandlogo-container">
-                                                <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
-                                                </div>    
-                                            </div>
-                                        </div>
-                                    </MDBCardText>
-                                    </MDBCardBody>
-                                </MDBCard>
-                                </a>
-                            </MDBCol>
-                            <MDBCol>
-                            <a className="meds-card-link" href="/meds/item">
-                                <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
-                                    <MDBCardBody>
-                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
-                                    <MDBCardText>
-                                        <div className="med-content-container">
-                                            <div className="grey-text text-center">
-                                            <p className="med-sub-h">
-                                                <MDBIcon icon="tags" />
-                                                    Neozep Forte
-                                                </p>
-                                            </div>
-                                            <div className="prizeandlogo-container">
-                                                <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
-                                                </div>    
-                                            </div>
-                                        </div>
-                                    </MDBCardText>
-                                    </MDBCardBody>
-                                </MDBCard>
-                                </a>
-                            </MDBCol>
-                            <MDBCol>
-                            <a className="meds-card-link" href="/meds/item">
-                                <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
-                                    <MDBCardBody>
-                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
-                                    <MDBCardText>
-                                        <div className="med-content-container">
-                                            <div className="grey-text text-center">
-                                            <p className="med-sub-h">
-                                                <MDBIcon icon="tags" />
-                                                    Neozep Forte
-                                                </p>
-                                            </div>
-                                            <div className="prizeandlogo-container">
-                                                <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
-                                                </div>    
-                                            </div>
-                                        </div>
-                                    </MDBCardText>
-                                    </MDBCardBody>
-                                </MDBCard>
-                                </a>
-                            </MDBCol>
-                            <MDBCol>
-                            <a className="meds-card-link" href="/meds/item">
-                                <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
-                                    <MDBCardBody>
-                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
-                                    <MDBCardText>
-                                        <div className="med-content-container">
-                                            <div className="grey-text text-center">
-                                            <p className="med-sub-h">
-                                                <MDBIcon icon="tags" />
-                                                    Neozep Forte
-                                                </p>
-                                            </div>
-                                            <div className="prizeandlogo-container">
-                                                <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
-                                                </div>    
-                                            </div>
-                                        </div>
-                                    </MDBCardText>
-                                    </MDBCardBody>
-                                </MDBCard>
-                                </a>
-                            </MDBCol>
-                        </MDBRow>
-                    </MDBContainer>
-                    </Slide>
-                    <Slide up>
-                    <h1 className="med-otc-h-2">Experimental Collection</h1>
-                    <MDBContainer>
-                        <MDBRow>
-                            <MDBCol>
-                            <a className="meds-card-link" href="/meds/item">
-                                <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
-                                    <MDBCardBody>
-                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
-                                    <MDBCardText>
-                                        <div className="med-content-container">
-                                            <div className="grey-text text-center">
-                                            <p className="med-sub-h">
-                                                <MDBIcon icon="tags" />
-                                                    Neozep Forte
-                                                </p>
-                                            </div>
-                                            <div className="prizeandlogo-container">
-                                                <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
-                                                </div>    
-                                            </div>
-                                        </div>
-                                    </MDBCardText>
-                                    </MDBCardBody>
-                                </MDBCard>
-                                </a>
-                            </MDBCol>
-                            <MDBCol>
-                            <a className="meds-card-link" href="/meds/item">
-                                <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
-                                    <MDBCardBody>
-                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
-                                    <MDBCardText>
-                                        <div className="med-content-container">
-                                            <div className="grey-text text-center">
-                                            <p className="med-sub-h">
-                                                <MDBIcon icon="tags" />
-                                                    Neozep Forte
-                                                </p>
-                                            </div>
-                                            <div className="prizeandlogo-container">
-                                                <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
-                                                </div>    
-                                            </div>
-                                        </div>
-                                    </MDBCardText>
-                                    </MDBCardBody>
-                                </MDBCard>
-                                </a>
-                            </MDBCol>
-                            <MDBCol>
-                            <a className="meds-card-link" href="/meds/item">
-                                <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
-                                    <MDBCardBody>
-                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
-                                    <MDBCardText>
-                                        <div className="med-content-container">
-                                            <div className="grey-text text-center">
-                                            <p className="med-sub-h">
-                                                <MDBIcon icon="tags" />
-                                                    Neozep Forte
-                                                </p>
-                                            </div>
-                                            <div className="prizeandlogo-container">
-                                                <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
-                                                </div>    
-                                            </div>
-                                        </div>
-                                    </MDBCardText>
-                                    </MDBCardBody>
-                                </MDBCard>
-                                </a>
-                            </MDBCol>
-                            <MDBCol>
-                            <a className="meds-card-link" href="/meds/item">
-                                <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
-                                    <MDBCardBody>
-                                    <MDBCardTitle><h3 className="med-item-header">Neozep</h3></MDBCardTitle>
-                                    <MDBCardText>
-                                        <div className="med-content-container">
-                                            <div className="grey-text text-center">
-                                            <p className="med-sub-h">
-                                                <MDBIcon icon="tags" />
-                                                    Neozep Forte
-                                                </p>
-                                            </div>
-                                            <div className="prizeandlogo-container">
-                                                <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> 5.00</h4> 
-                                                </div>    
-                                            </div>
-                                        </div>
-                                    </MDBCardText>
-                                    </MDBCardBody>
-                                </MDBCard>
-                                </a>
-                            </MDBCol>
-                        </MDBRow>
-                    </MDBContainer> */}
+                    {/* Pain Relievers */}
                     <h1 className="med-otc-h">Pain Relievers</h1>
                     <MDBContainer>
                         <MDBRow>   
                         {this.state.meds2.map(med2 => 
                             <MDBCol style={{'margin-bottom':'5%'}} md="6" lg="3">
-                               
-                            <a key={med2.med_id} className="meds-card-link" href="/meds/item">
+                                <Link 
+                                to={{
+                                        pathname: `/meds/${med2.name}`,
+                                    }}
+                                key={med2.med_id} 
+                                className="meds-card-link"
+                                >
                                 <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={med2.image} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">
                                         {med2.name}
@@ -804,7 +443,7 @@ class Medicines extends Component{
                                     </MDBCardText>
                                     </MDBCardBody>
                                 </MDBCard>
-                                </a>
+                                </Link>
                               
                             </MDBCol>
                             )}
@@ -823,9 +462,15 @@ class Medicines extends Component{
                         {this.state.meds.map(med => 
                             <MDBCol style={{'margin-bottom':'5%'}} md="6" lg="3">
                                
-                            <a key={med.med_id} className="meds-card-link" href="/meds/item">
+                                <Link 
+                                to={{
+                                        pathname: `/meds/${med.name}`,
+                                    }}
+                                key={med.med_id} 
+                                className="meds-card-link"
+                                >
                                 <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={med.image} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">
                                         {med.name}
@@ -848,7 +493,7 @@ class Medicines extends Component{
                                     </MDBCardText>
                                     </MDBCardBody>
                                 </MDBCard>
-                                </a>
+                                </Link>
                               
                             </MDBCol>
                             )}
@@ -865,9 +510,15 @@ class Medicines extends Component{
                         {this.state.aMeds.map(aMed => 
                             <MDBCol style={{'margin-bottom':'5%'}} md="6" lg="3">
                                
-                            <a key={aMed.med_id} className="meds-card-link" href="/meds/item">
+                            <Link 
+                            to={{
+                                    pathname: `/meds/${aMed.name}`,
+                                }}
+                            key={aMed.med_id} 
+                            className="meds-card-link"
+                            >
                                 <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={aMed.image} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">
                                         {aMed.name}
@@ -890,51 +541,12 @@ class Medicines extends Component{
                                     </MDBCardText>
                                     </MDBCardBody>
                                 </MDBCard>
-                                </a>
+                                </Link>
                               
                             </MDBCol>
                             )}
                         </MDBRow>
-                    </MDBContainer>
-
-{/*                    
-                    <MDBContainer>
-                        <MDBRow>   
-                        {this.state.search.map(asearch => 
-                            <MDBCol style={{'margin-bottom':'5%'}} md="6" lg="3">
-                               
-                            <a key={asearch.med_id} className="meds-card-link" href="/meds/item">
-                                <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
-                                    <MDBCardBody>
-                                    <MDBCardTitle><h3 className="med-item-header">
-                                        {asearch.name}
-                                        </h3>
-                                        </MDBCardTitle>
-                                    <MDBCardText>
-                                        <div className="med-content-container">
-                                            <div className="grey-text text-center">
-                                            <p className="med-sub-h">
-                                                <MDBIcon icon="tags" />
-                                                {asearch.brand}
-                                                </p>
-                                            </div>
-                                            <div className="prizeandlogo-container">
-                                                <div className="black-text text-center">
-                                                    <h4 className="med-price"><img src={phlogo} className="icon-ph-flag" alt=""/> <span>&#8369;</span> {asearch.price}</h4> 
-                                                </div>    
-                                            </div>
-                                        </div>
-                                    </MDBCardText>
-                                    </MDBCardBody>
-                                </MDBCard>
-                                </a>
-                              
-                            </MDBCol>
-                            )}
-                        </MDBRow>
-                    </MDBContainer> */}
-                    
+                    </MDBContainer>                    
                     {
                         /*
                         Herbal Section
@@ -944,11 +556,16 @@ class Medicines extends Component{
                     <MDBContainer>
                         <MDBRow>   
                         {this.state.herbal.map(herbs => 
-                            <MDBCol style={{'margin-bottom':'5%'}} md="6" lg="3">
-                               
-                            <a key={herbs.med_id} className="meds-card-link" href="/meds/item">
+                            <MDBCol style={{'margin-bottom':'5%'}} md="6" lg="3">  
+                            <Link 
+                            to={{
+                                    pathname: `/meds/${herbs.name}`,
+                                }}
+                            key={herbs.med_id} 
+                            className="meds-card-link"
+                            >
                                 <MDBCard>
-                                    <MDBCardImage hover zoom className="img-fluid" src={biogesic} waves />
+                                    <MDBCardImage hover zoom className="img-fluid" src={herbs.image} waves />
                                     <MDBCardBody>
                                     <MDBCardTitle><h3 className="med-item-header">
                                         {herbs.name}
@@ -971,7 +588,7 @@ class Medicines extends Component{
                                     </MDBCardText>
                                     </MDBCardBody>
                                 </MDBCard>
-                                </a>
+                                </Link>
                               
                             </MDBCol>
                             )}
