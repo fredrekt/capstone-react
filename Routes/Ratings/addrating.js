@@ -18,7 +18,7 @@ Router.post("/:med_id",(req, res)=>{
             if(!err){
                 console.log("added rating")
                 //res.send(rows)
-                
+                    
             }
             else{
                 console.log("Failed to search")
