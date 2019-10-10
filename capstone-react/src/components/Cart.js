@@ -273,7 +273,7 @@ class Cart extends Component{
                                 </MDBCol>
                                 <MDBCol style={{'text-align':'right'}}>
                                     <h2 className="cart-price"> <span>&#8369;</span>{item.price}</h2>
-                                    <p className="qty-sub-txt grey-text">Quantity: 1</p>
+                                    <p className="qty-sub-txt grey-text">Quantity: {item.qty}</p>
                                     <MDBBtn style={{'margin-top':'-2%'}} outline color="danger" size="sm" value={item.order_id} onClick={this.removeCart}>Remove</MDBBtn>
                                 </MDBCol>
                               
