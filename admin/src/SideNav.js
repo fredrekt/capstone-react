@@ -42,7 +42,7 @@ const SideNavbar = () =>{
             </NavItem>
 
             <NavItem eventKey="charts/barchart">
-                <NavText>
+                <NavText style={{'color':'white'}}>
                     <Link to="/ordered-products">
                          Ordered Products
                     </Link>
@@ -56,7 +56,27 @@ const SideNavbar = () =>{
                     </Link>
                 </NavText>
             </NavItem>
+
+            <NavItem eventKey="charts/chartaw">
+                <NavText>
+                    <Link to="/update-stocks">
+                        Update Stocks 
+                    </Link>
+                </NavText>
+            </NavItem>
+
+            <NavItem eventKey="charts/remove">
+                <NavText>
+                    <Link to="/remove-product">
+                        Remove Product
+                    </Link>
+                </NavText>
+            </NavItem>
+
+
         </NavItem>
+
+        
 
         <NavItem eventKey="charts/shipping">
             <NavIcon>
