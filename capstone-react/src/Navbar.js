@@ -89,7 +89,7 @@ class Navbar extends React.Component {
                     </MDBDropdownToggle>
                     <MDBDropdownMenu>
                       <MDBDropdownItem>
-                       <Link to="/my-account">
+                       <Link to="/account">
                        Account
                        </Link>
                       </MDBDropdownItem>
