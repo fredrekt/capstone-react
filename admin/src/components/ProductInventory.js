@@ -9,7 +9,7 @@ class ProductInventory extends Component{
         }
     }
     componentDidMount(){
-        fetch('/all-meds')
+        fetch('/allprod')
         .then(res => res.json())
         .then(data => this.setState({products:data}))
     }
@@ -43,7 +43,7 @@ class ProductInventory extends Component{
                                 <td>{products.brand}</td>
                                 <td>{products.category}</td>
                                 <td>{products.price}</td>
-                                <td>100</td>
+                                <td>{products.stock}</td>
                                 </tr>
                                 )}
                             </MDBTableBody>
