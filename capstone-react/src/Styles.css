@@ -638,11 +638,52 @@ strong#nav-brand{
 
 
 /*
-=============== ADMIN SIDE ============
+============= Account Component Starts ========
+/*
+
+/* Account Component Starts */
+.account-h{
+    margin-top: 5%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: bold; 
+}
+.account-container{
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+.pay-container-deets{
+    background-image: url('https://cdn2.iconfinder.com/data/icons/men-avatars/33/man_2-512.png');
+    background-repeat: no-repeat;
+    background-position:right;
+    background-size: 25%;
+    padding: 20px;
+}
+.pay-c-h{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold; 
+}
+.pay-subheader{
+    font-size: 10px;
+}
+.pay-card-icon{
+    margin-top: -5%;
+}
+
+/* Account Component Ends */
+
+
+
+
+/*
+=============== ADMIN SIDE STARTS ============
 */
 
 /*
-============ Admin Component ==========
+============ Admin Component Starts ==========
 */
 .icon-fb{
     margin-right: 2%;
@@ -661,4 +702,81 @@ strong#nav-brand{
     font-weight: bold; 
     text-transform: uppercase;
 }
+/* 
+============ Admin Component Ends ==========
+*/
 
+
+/*
+=============== ADMIN SIDE ENDS ============
+*/
+
+
+/*
+========== Meds Item ======
+*/
+.number-input input[type="number"] {
+    -webkit-appearance: textfield;
+      -moz-appearance: textfield;
+            appearance: textfield;
+  }
+  .number-input input[type=number]::-webkit-inner-spin-button,
+  .number-input input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+  .number-input {
+    margin-bottom: 3rem;
+  }
+  .number-input button {
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+  }
+  .number-input button:before,
+  .number-input button:after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    height: 2px;
+    transform: translate(-50%, -50%);
+  }
+  .number-input button.plus:after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  .number-input input[type=number] {
+    text-align: center;
+  }
+  .number-input.number-input {
+    border: 1px solid #ced4da;
+    width: 10rem;
+    border-radius: .25rem;
+  }
+  .number-input.number-input button {
+    width: 2.6rem;
+    height: .7rem;
+  }
+  .number-input.number-input button.minus {
+    padding-left: 10px;
+  }
+  .number-input.number-input button:before,
+  .number-input.number-input button:after {
+    width: .7rem;
+    background-color: #495057;
+  }
+  .number-input.number-input input[type=number] {
+    max-width: 4rem;
+    padding: .5rem;
+    border: 1px solid #ced4da;
+    border-width: 0 1px;
+    font-size: 1rem;
+    height: 2rem;
+    color: #495057;
+  }
+  /*
+  ========= End Meds Item =====
+  */
