@@ -10,6 +10,7 @@ const herbalMeds = require('./Routes/herbals')
 const users = require('./Routes/users')
 const register = require('./Routes/register')
 const login = require('./Routes/login')
+const account = require('./Routes/account')
 const medsitem = require('./Routes/medicineitem')
 const session = require('express-session'); 
 
@@ -19,6 +20,13 @@ const displayratings = require('./Routes/Ratings/displayratings')
 
 //cart
 const cartRouter = require('./Routes/cart');
+
+//admin 
+const getOrders = require('./Routes/Admin/orders')
+const inventory = require('./Routes/Admin/inventory')
+const addproduct = require('./Routes/Admin/addproduct')
+const updateStock = require('./Routes/Admin/updatestocks')
+const deleteprod = require('./Routes/Admin/deleteproduct')
 
 var app = express()
 // app.use(bodyParser.urlencoded({ extended: false}))
@@ -72,6 +80,9 @@ app.use("/register",register)
 //login route
 app.use("/login",login)
 
+//edit account route
+app.use("/account",account)
+
 //meds item
 app.use('/medicines', medsitem);
 
@@ -85,5 +96,25 @@ app.use('/med-rating',displayratings)
 
 //cart route
 app.use('/cart', cartRouter)
+
+//admin route
+
+//show all prod from inventory
+app.use('/allprod',inventory)
+
+//show orders for approval
+
+app.use('/all-orders',getOrders)
+
+//adding product
+app.use('/addproduct', addproduct)
+
+//update stock
+app.use('/update-stock',updateStock)
+
+//delete product
+app.use('/delete-product',deleteprod)
+
+//approve product
 
 app.listen(3001)
