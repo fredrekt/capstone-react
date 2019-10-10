@@ -19,6 +19,7 @@ import AdminLogin from './admin/AdminLogin'
 import AdminReg from './admin/AdminRegistration'
 import Admin from './admin/AdminController'
 import { ProtectedRoute } from './auth/protectedroute'
+import Account from './components/Account';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/contact" component={ContactComponent}/>
             <Route path="/sign-in" component={Login}/>
             <Route path="/sign-up" component={Register}/>
+            <ProtectedRoute path="/account" component={Account} />
             <ProtectedRoute path="/medicines-shop" component={Medicines}/>
             <ProtectedRoute path="/meds/:item" component={MedicineItem}/>
             <ProtectedRoute path="/cart" component={Cart}/>
