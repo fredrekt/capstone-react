@@ -14,6 +14,11 @@ const account = require('./Routes/account')
 const medsitem = require('./Routes/medicineitem')
 const session = require('express-session'); 
 
+//sort by ASC => Alphabetical 
+const sortbyA = require('./Routes/atoz')
+const sortCat = require('./Routes/Admin/categorychoices')
+const sortDisplay = require('./Routes/selectedDisplay')
+
 //ratings 
 const addrating = require('./Routes/Ratings/addrating')
 const displayratings = require('./Routes/Ratings/displayratings')
@@ -27,6 +32,7 @@ const inventory = require('./Routes/Admin/inventory')
 const addproduct = require('./Routes/Admin/addproduct')
 const updateStock = require('./Routes/Admin/updatestocks')
 const deleteprod = require('./Routes/Admin/deleteproduct')
+const categchoices = require('./Routes/Admin/categorychoices')
 
 var app = express()
 // app.use(bodyParser.urlencoded({ extended: false}))
@@ -86,6 +92,15 @@ app.use("/account",account)
 //meds item
 app.use('/medicines', medsitem);
 
+//A to Z sort 
+app.use('/orderbya',sortbyA)
+
+//category 
+app.use('/allmeds-cat',sortCat)
+
+//sort by category selected
+app.use('/sort-category',sortDisplay)
+
 //Rating Routes
 
 //add rating to a medicine
@@ -101,6 +116,9 @@ app.use('/cart', cartRouter)
 
 //show all prod from inventory
 app.use('/allprod',inventory)
+
+//category choices
+app.use('/category-choices',categchoices)
 
 //show orders for approval
 
