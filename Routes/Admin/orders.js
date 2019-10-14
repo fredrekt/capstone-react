@@ -22,10 +22,7 @@ Router.get('/update/:medid',(req, res) =>{
             if(err)
             throw err
         const qtyV = row[0].qty;
-    //console.log(row[0].qty);
-    //declaration of var
-    // const numqty = 
-    //console.log(row[0].stock);
+    console.log(row)
     const stackV = row[0].stock;
     const approveOrders = `update medicines set stock = (stock - ${qtyV}  ) where med_id = ${medid} `
     if(qtyV<=stackV){
