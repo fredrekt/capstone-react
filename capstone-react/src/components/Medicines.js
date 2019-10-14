@@ -30,7 +30,9 @@ class Medicines extends Component{
             herbal:[],
             search: [],
             value: '',
-            ratingmed: 0
+            ratingmed: 0,
+            catmeds: [],
+            mainmeds: 'Over the Counter'
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -115,10 +117,13 @@ class Medicines extends Component{
         // fetch(`/med-rating`)
         // .then(res => res.json())
         // .then(ratingmed => this.setState({ratingmed}))
+        fetch('/allmeds-cat')
+        .then(res => res.json())
+        .then(catmeds => this.setState({catmeds}))
     } 
     searchMeds = () =>{
         fetch('/search-meds')
-        body: this.state.search = '`${search}'
+        //body: this.state.search = '`${search}'
         .then(res => res.json())
         .then(data => {
             console.log('Request success!',data)
@@ -129,8 +134,39 @@ class Medicines extends Component{
 
     }
 
+    sortByAsc = () =>{
+        fetch('/orderbya')
+        .then(res => res.json())
+        .then(allmeds => this.setState({allmeds}))
+    }
 
+    selectedCategoryDisplay = ()=>{
+        const value = this.state.catmeds
+        fetch(`/sort-category`)
+        .then(res => res.json())
+        .then(allmeds => this.setState({allmeds}))
+    }
 
+    selectedCategoryDisplay2 = ()=>{
+        const value = this.state.catmeds
+        fetch(`/sort-category/allergy`)
+        .then(res => res.json())
+        .then(allmeds => this.setState({allmeds}))
+    }
+
+    selectedCategoryDisplay3 = ()=>{
+        const value = this.state.catmeds
+        fetch(`/sort-category/pain`)
+        .then(res => res.json())
+        .then(allmeds => this.setState({allmeds}))
+    }
+
+    selectedCategoryDisplay4 = ()=>{
+        const value = this.state.catmeds
+        fetch(`/sort-category/vitamins`)
+        .then(res => res.json())
+        .then(allmeds => this.setState({allmeds}))
+    }
 
 
     render(){
@@ -167,11 +203,6 @@ class Medicines extends Component{
                 {this.state.search.map(search1 => 
                 <Breadcrumb key={search1.med_id} bheader="Medicine Found" bcurrent={search1.name}/>
                 )}
-                        {/* <ul>
-                            {this.state.search.map(searchs =>
-                            <li key={searchs.med_id}>{searchs.name}</li>
-                            )}
-                        </ul> */}
                         <MDBAnimation type="rotateInDownLeft">
                         <MDBContainer style={{'margin-top':'5%','margin-bottom':'10%'}}>
                         <h1 className="med-otc-h">Found Anything?</h1>
@@ -244,38 +275,9 @@ class Medicines extends Component{
             )
            
         }
-        if(this.state.search == 0){
-            // return(
-            //     <div>
-            //         <h1>did not find shit</h1>
-            //     </div>
-            // )
+        if(this.state.search == null ){
+            alert('error:Medicine not found')
         }
-        // else{
-        //     return(
-        //         <div>
-        //             <Breadcrumb bheader="Medicine Not Found" bcurrent="Search failed" />
-        //             <div style={{'margin-top':'5%','margin-bottom':'5%'}}>
-        //             <MDBContainer>
-        //                 <MDBAnimation type="slideInUp">
-        //                 <MDBContainer>
-        //                     <MDBAlert color="danger">
-        //                         <h4 className="alert-heading">! <MDBIcon icon="database" /></h4>
-        //                         <p>Our servers and databases seem to be down. Don't worry, we'll get right on it! </p>
-        //                         <hr />
-        //                         <p className="mb-0">You can try again later, sorry for the inconvenience.</p>
-                                
-        //                     </MDBAlert>
-        //                     <div className="text-center">
-        //                     <MDBBtn href="/medicines-shop" size="sm" outline color="danger">Go Back</MDBBtn>
-        //                     </div>
-        //                     </MDBContainer>
-        //                     </MDBAnimation>
-        //                 </MDBContainer> 
-        //             </div>
-        //         </div>
-        //     )
-        // }
  
         return(
             <div>
@@ -338,6 +340,7 @@ class Medicines extends Component{
                 
                 
                 <div className="med-container">
+
                     <div className="search-component">
                     <MDBCol className="search-container" md="6">
                         <div className="search-container">
@@ -355,8 +358,122 @@ class Medicines extends Component{
                         </div>
                     </MDBCol>
                     </div>
+                    <MDBContainer className="p-3">
+                        <div>
+                            <h4 className="text-left">
+                                Browse by yourself
+                            </h4>
+                            <p className="text-left grey-text">
+                                Choose a category you want
+                            </p>
+                            
+                            <MDBRow>
+                            
+                                <MDBCol>  
+                                    <a onClick={this.sortByAsc}>
+                                        <MDBView zoom>
+                                            <img
+                                            src={biogesic}
+                                            style={{'width':'100%'}}
+                                            alt=""
+                                            />
+                                            <MDBMask style={{'width':'100%'}} overlay="black-light">
+                                                <p className="white-text flex-center">A - Z</p>
+                                            </MDBMask>
+                                        </MDBView>
+                                    </a>
+                                </MDBCol>
+{/*                           
+                                {this.state.catmeds.map(categorymeds =>
+                                <MDBCol>
+                                    <a
+                                    key={categorymeds.med_id}
+                                    onClick={this.selectedCategoryDisplay(categorymeds.category)}>
+                                        <MDBView zoom>
+                                            <img
+                                            src={biogesic}
+                                            style={{'width':'100%'}}
+                                            alt=""
+                                            />
+                                            <MDBMask style={{'width':'100%'}} overlay="black-light">
+                                                <p className="white-text flex-center">{categorymeds.category}</p>
+                                            </MDBMask>
+                                        </MDBView>
+                                    </a>
+                                </MDBCol>
+                                )} */}
+
+                                <MDBCol>
+                                    <a
+                                    onClick={this.selectedCategoryDisplay}>
+                                        <MDBView zoom>
+                                            <img
+                                            src={biogesic}
+                                            style={{'width':'100%'}}
+                                            alt=""
+                                            />
+                                            <MDBMask style={{'width':'100%'}} overlay="black-light">
+                                                <p className="white-text flex-center">Fever</p>
+                                            </MDBMask>
+                                        </MDBView>
+                                    </a>
+                                </MDBCol>
+
+                                <MDBCol>
+                                    <a
+                                    onClick={this.selectedCategoryDisplay2}>
+                                        <MDBView zoom>
+                                            <img
+                                            src={biogesic}
+                                            style={{'width':'100%'}}
+                                            alt=""
+                                            />
+                                            <MDBMask style={{'width':'100%'}} overlay="black-light">
+                                                <p className="white-text flex-center">Allergy</p>
+                                            </MDBMask>
+                                        </MDBView>
+                                    </a>
+                                </MDBCol>
+
+                                <MDBCol>
+                                    <a
+                                    onClick={this.selectedCategoryDisplay3}>
+                                        <MDBView zoom>
+                                            <img
+                                            src={biogesic}
+                                            style={{'width':'100%'}}
+                                            alt=""
+                                            />
+                                            <MDBMask style={{'width':'100%'}} overlay="black-light">
+                                                <p className="white-text flex-center">Pain Relievers</p>
+                                            </MDBMask>
+                                        </MDBView>
+                                    </a>
+                                </MDBCol>
+
+                                <MDBCol>
+                                    <a
+                                    onClick={this.selectedCategoryDisplay4}>
+                                        <MDBView zoom>
+                                            <img
+                                            src={biogesic}
+                                            style={{'width':'100%'}}
+                                            alt=""
+                                            />
+                                            <MDBMask style={{'width':'100%'}} overlay="black-light">
+                                                <p className="white-text flex-center">New category</p>
+                                            </MDBMask>
+                                        </MDBView>
+                                    </a>
+                                </MDBCol>
+
+
+                            </MDBRow>
+                        </div>
+                    </MDBContainer>
+
                 <Slide up>
-                    <h1 className="med-otc-h">Over the Counter</h1>
+                    <h1 className="med-otc-h">{this.state.mainmeds}</h1>
                     <MDBContainer>
                         <MDBRow>
                             {this.state.allmeds.map(allmeds => 
