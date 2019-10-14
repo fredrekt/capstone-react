@@ -59,6 +59,55 @@ Router.post('/removecart/:order_id', (req,res) =>{
 
     res.end();
 })
+
+//checkout 
+
+Router.get('/updateCart',(req, res) =>{
+    const user = req.session.username
+    const showOrders = `select * from orders where user_id ='${user}' `
+
+    conn.query(showOrders,(err,row)=>{
+        if(err) throw err
+        const qty = row[0].qty
+        const qty2 = row[1].qty
+        const qty3 = row[2].qty
+        const qty4 = row[3].qty 
+        console.log('Quantity of item: ',qty)
+        console.log('qty 2: ',qty2)
+        console.log('qty 3: ',qty3)
+        console.log('qty 4: ',qty4)
+
+    const medid = req.params.medid
+    const updateQry = `update medicines set stock =(stock - ${qty}) where med_id = 1`
+    conn.query(updateQry, (err, rows, result) =>{
+        if(err) throw err
+        console.log('Checkout Successful!')
+        //res.send(rows)
+    })
+    
+    const updateQry2 = `update medicines set stock =(stock - ${qty2}) where med_id = 3`
+    conn.query(updateQry2, (err, rows, result) =>{
+        if(err) throw err
+        console.log('Checkout Successful2!')
+        //res.send(rows)
+    })
+
+    const updateQry3 = `update medicines set stock =(stock - ${qty3}) where med_id = 8`
+    conn.query(updateQry3, (err, rows, result) =>{
+        if(err) throw err
+        console.log('Checkout Successful 3!')
+        //res.send(rows)
+    })
+
+    const updateQry4 = `update medicines set stock =(stock - ${qty4}) where med_id = 11`
+    conn.query(updateQry4, (err, rows, result) =>{
+        if(err) throw err
+        console.log('Checkout Successful 4!')
+        //res.send(rows)
+    })
+
+})//qry for showing items on cart on current user logged in
+})
  
   
 module.exports = Router;
