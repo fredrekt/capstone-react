@@ -238,6 +238,15 @@ class MedicineItem extends Component{
                         />
                         <br />
                         <Rating rating={rating} maxRating={5} />
+                        {/* <div className="container text-left">
+                            <MDBInput
+                            label="What do you have got to say?"
+                            type="text"
+                            icon="comments"
+                            value=""
+                            onChange=""
+                            />
+                        </div> */}
                     </div>
                     
                 </MDBModalBody>
