@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { MDBContainer, MDBTable, MDBTableHead, MDBTableBody,
-     MDBCol, MDBRow, MDBInput, MDBBtn, MDBIcon,
+     MDBCol, MDBRow, MDBInput, MDBBtn, MDBIcon, MDBTooltip,
      MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact'
 import { stringify } from 'querystring'
 
@@ -21,8 +21,11 @@ class AddProducts extends Component{
             info: '',
             price: '',
             image: '',
-            category: '',
-            stock: 0
+            category: 'fever',
+            stock: 0,
+            choices: [],
+            catlabel: '',
+            catvisible: 'hidden'
         }
     }
     handleChange = (event) =>{
@@ -123,6 +126,23 @@ class AddProducts extends Component{
             this.notifyError()
         })
     }
+
+    // addProd = (event) => {
+    //     alert('Your favorite flavor is: ' + this.state.category);
+    //     event.preventDefault();
+    //   }
+
+    showInput = () =>{
+        this.setState({catvisible:'visible',
+                       catlabel: 'Add New Category'
+        })
+    }
+
+    componentDidMount(){
+        fetch('/category-choices')
+        .then(res => res.json())
+        .then(data => this.setState({choices:data}))
+    }
     render(){
         // {props =>{
         //     const { values, handleChange} = props
@@ -143,6 +163,7 @@ class AddProducts extends Component{
                                             group
                                             type="text"
                                             validate
+                                            required
                                             onChange={this.handleChange}
                                             value={this.state.name}
                                             error="wrong"
@@ -155,6 +176,7 @@ class AddProducts extends Component{
                                             label="Generic Name"
                                             group
                                             type="text"
+                                            required
                                             validate
                                             onChange={this.handleChange2}
                                             value={this.state.generic}
@@ -168,6 +190,7 @@ class AddProducts extends Component{
                                             label="Pricing"
                                             group
                                             type="number"
+                                            required
                                             validate
                                             onChange={this.handleChange7}
                                             value={this.state.price}
@@ -183,6 +206,7 @@ class AddProducts extends Component{
                                             label="Brand Name"
                                             group
                                             type="text"
+                                            required
                                             validate
                                             onChange={this.handleChange3}
                                             value={this.state.brand}
@@ -196,6 +220,7 @@ class AddProducts extends Component{
                                             label="Shape"
                                             group
                                             type="text"
+                                            required
                                             validate
                                             onChange={this.handleChange4}
                                             value={this.state.shape}
@@ -209,6 +234,7 @@ class AddProducts extends Component{
                                             label="Image"
                                             group
                                             type="text"
+                                            required
                                             validate
                                             onChange={this.handleChange8}
                                             value={this.state.image}
@@ -220,31 +246,47 @@ class AddProducts extends Component{
                                 </MDBRow>  
                                 <MDBRow>
                                     <MDBCol>
-                                            {/* <div style={{'margin-left':'-55%'}} className="left-text">
+                                            <div value={this.state.category} onChange={this.handleChange9} style={{'margin-left':'-45%'}} className="left-text">
                                                 <select style={{'width':'30%'}} className="browser-default custom-select">
-                                                    <option>Choose Category</option>
-                                                    <option value="1">Pain Reliever</option>
-                                                    <option value="2">Fever</option>
-                                                    <option value="3">Allergy</option>
+                                                    {this.state.choices.map(choice =>
+                                                    <option value={choice.category}>{choice.category}</option>
+                                                    )}
+                                                   
                                                 </select>
-                                            </div> */}
+                                                <MDBTooltip
+                                                    placement="right"
+                                                >   
+                                                <MDBBtn 
+                                                    onClick={this.showInput}
+                                                    style={{
+                                                        'margin-left':'1%',
+                                                        'background':'',
+                                                        'border-radius':'4px'
+                                                    }}
+                                                    size="sm"
+                                                >
+                                                    +
+                                                    </MDBBtn>
+                                                <div>
+                                                    Add a new category
+                                                </div>
+                                            </MDBTooltip>
+                                            </div>
                                             <MDBInput
-                                            label="Category"
-                                            group
-                                            type="text"
-                                            validate
+                                            type='text'
                                             onChange={this.handleChange9}
+                                            required
                                             value={this.state.category}
-                                            error="wrong"
-                                            success="right"
-                                            style={{'width':'50%', 'border':'solid 1px white'}}
-                                        />
+                                            label={this.state.catlabel}
+                                            style={{'width':'45%','visibility':this.state.catvisible}}
+                                            />
                                         </MDBCol>
                                         <MDBCol>
                                             <MDBInput
                                                 label="Quantity"
                                                 group
                                                 type="number"
+                                                required
                                                 validate
                                                 onChange={this.handleChange10}
                                                 value={this.state.stock}
@@ -259,6 +301,7 @@ class AddProducts extends Component{
                                         <MDBInput
                                             type="textarea"
                                             label="Dosage" 
+                                            required
                                             rows="5" 
                                             onChange={this.handleChange5}
                                             value={this.state.dosage}
@@ -269,6 +312,7 @@ class AddProducts extends Component{
                                         <MDBInput
                                             type="textarea"
                                             label="Short Description" 
+                                            required
                                             rows="5" 
                                             value={this.state.info}
                                             onChange={this.handleChange6}
