@@ -27,8 +27,8 @@ conn.query(qry,(err, rows, fields)=>{
             res.send(rows)
             }
             else{
-                console.log('failed to find')
-                res.send('did not find anything')
+                console.log('failed to find',rows)
+                res.send(rows)
                 // must redirect to a component 
                 // that will return an error view
                 // (wasnt able to find meds)
