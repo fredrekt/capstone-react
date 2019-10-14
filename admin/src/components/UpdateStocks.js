@@ -18,7 +18,7 @@ class UpdateStocks extends Component{
             image: '',
             category: '',
             stock: 0,
-            medid:''
+            medid: 1
         }
     }
 
@@ -33,6 +33,10 @@ class UpdateStocks extends Component{
     }
     addtest = () =>{
         console.log('name:'+this.state.name+'generic:'+this.state.generic)
+    }
+
+    handleSelect = (event) =>{
+        this.setState({ medid: event.target.value})
     }
 
     toggle = () => {
@@ -52,7 +56,7 @@ class UpdateStocks extends Component{
              headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
             },
-            body: `stock=${stock}&name=${name}`
+            body: `stock=${stock}&name=${medid}`
         })
         .then(res => res.json())
         .then(data =>{
@@ -64,6 +68,10 @@ class UpdateStocks extends Component{
         })
     }
 
+    // handleSubmit = (event) => {
+    //     alert('Your favorite flavor is: ' + this.state.medid);
+    //     event.preventDefault();
+    //   }
     componentDidMount(){
         fetch('/allprod')
         .then(res => res.json())
@@ -86,34 +94,17 @@ class UpdateStocks extends Component{
                             Please choose a medicine to update its stock
                         </p>
                               <MDBContainer> 
-                                {/* <div className="text-left">
-                                    <select name="" id=""> 
-                                    {this.state.meds.map(meds => 
-                                        <option value={meds.name}>{meds.name}</option>
-                                    )}
-                                    </select>
-                                </div> */}
                                 <MDBRow>
                                     <MDBCol>
-                                        {/* <div style={{'margin-left':'-22%'}} className="left-text">
+                                        <div style={{'margin-left':'-22%'}} className="left-text">
                                         
-                                            <select value={this.state.medid} style={{'width':'70%'}} className="browser-default custom-select">
-                                                {this.state.meds.map(meds   =>
+                                            <select value={this.state.medid} onChange={this.handleSelect} style={{'width':'70%'}} className="browser-default custom-select">
+                                                {this.state.meds.map(meds =>
                                                 <option value={meds.med_id}>{meds.name}</option>
                                                 )}
+                                            
                                             </select>
-                                        </div> */}
-                                        <MDBInput
-                                            label="Enter Medicine ID"
-                                            group
-                                            type="text"
-                                            validate
-                                            onChange={this.handleChange3}
-                                            value={this.state.name}
-                                            error="wrong"
-                                            success="right"
-                                            style={{'width':'50%', 'border':'solid 1px white','margin-top':'-10%'}}
-                                        />
+                                        </div>
                                     </MDBCol>
 
                                     <MDBCol>
