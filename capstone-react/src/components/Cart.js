@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { MDBContainer, MDBCol, MDBRow, MDBBtn, MDBCard, MDBCardText, MDBCardBody, MDBCardTitle, MDBCardImage, MDBIcon, MDBAlert, MDBAnimation } from 'mdbreact' 
+import { MDBContainer, MDBCol, MDBRow, MDBBtn, MDBCard, MDBCardText, MDBCardBody, MDBCardTitle, MDBCardImage, MDBIcon, MDBAlert, MDBAnimation, MDBInput } from 'mdbreact' 
 import Breadcrumb from './Breadcrumb'
 import biogesic from '../img/meds-bio.jpeg'
 import biogesic2 from '../img/meds-sample-pic-2.jpeg'
@@ -7,6 +7,10 @@ import biogesic3 from '../img/meds-sample-pic-3.jpeg'
 import biogesic4 from '../img/meds-sample-pic-4.jpeg'
 import phlogo from '../img/ph-flag.png'
 import ScrollButton from './ScrollButton'
+import { MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
+
+//rating
+import { Rating } from 'semantic-ui-react'
 
 //Toastify 
 import { toast, ToastContainer } from 'react-toastify'
@@ -22,7 +26,10 @@ class Cart extends Component{
             selectedCart: [],
             totalprice: null,
             cartitems: '',
-            checkoutname: 'Checkout'
+            checkoutname: 'Checkout',
+            modal: false,
+            rating: 0,
+            comment: ''
           }
         this.med_key = props;
         }
@@ -104,8 +111,54 @@ class Cart extends Component{
                 console.log("Failed",error)
             })
         }
+        toggle = () => {
+            this.setState({
+                modal: !this.state.modal
+            });
+        }
+        handleChange = (e) => {
+            this.setState({ rating: e.target.value })
+        }
+        handleTextarea = (e) =>{
+            this.setState({ comment: e.target.value })
+        }
+        
+        submitComment = (event) =>{
+            event.preventDefault()
+            fetch('/rate-service',{
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: `rating=${this.state.rating}&comment=${this.state.comment}`
+            })
+            
+            //debugging hehe
+            console.log('rating: ',this.state.rating)
+            console.log('comment: ',this.state.comment)
+        }
+
+        //payment options
+        gotoPayment = (event) =>{
+            event.preventDefault()
+            this.setState({
+                checkoutname: <div class="spinner-border white-text" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+            })
+            setTimeout(()=>{
+                this.notifySuccess()
+                window.location.href = "/payment-method";
+            },2100)
+            setTimeout(()=>{
+                this.setState({checkoutname:'Checkout'})
+            },2000)
+            
+        }
+
 
     render(){
+        const { rating } = this.state
         const cart = this.state.cart;
         return(
             <div>
@@ -155,11 +208,48 @@ class Cart extends Component{
                                 <MDBCol style={{'text-align':'right'}}>
                                     <h3 className="cart-total-txt">Order-Sub-Total &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>&#8369;</span> {this.state.totalprice}</h3>
                                     <p className="cart-items-left grey-text">{cart.length} items</p>
+                                    
+                                    <form onSubmit={this.submitComment}>
+                                    <MDBContainer>
+                                        <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
+                                            <MDBModalHeader toggle={this.toggle}>Please rate our service <MDBIcon size="sm" icon="star" /></MDBModalHeader>
+                                            <MDBModalBody>
+                                                <div className="text-center">
+                                                    <h4>Choose how you want to rate us</h4>
+                                                        <p className="grey-text">
+                                                            Express your emotions through ratings <MDBIcon icon="kiss-wink-heart" />
+                                                        </p>
+                                                    <div>Your current rating is {rating}</div>
+                                                    <input
+                                                    type='range'
+                                                    min={0}
+                                                    max={5}
+                                                    value={rating}
+                                                    onChange={this.handleChange}
+                                                    />
+                                                    <br />
+                                                    <Rating rating={rating} maxRating={5} />
+                                                </div>
+                                                <MDBInput 
+                                                type="textarea" 
+                                                label="What do you wish to add?" 
+                                                value={this.state.comment}
+                                                onChange={this.handleTextarea}
+                                                rows="5" />
+                                            </MDBModalBody>
+                                            <MDBModalFooter>
+                                            <MDBBtn type="submit" color="success">Submit</MDBBtn>
+                                            <MDBBtn color="danger" onClick={this.toggle}>Close</MDBBtn>
+                                            
+                                            </MDBModalFooter>
+                                        </MDBModal>
+                                    </MDBContainer>
+                                    </form>
                                     <MDBBtn
                                     style={{'width':'400px'}} 
                                     size="md" 
                                     color="success"
-                                    onClick={this.checkout}
+                                    onClick={this.gotoPayment}
                                     >
                                     <h5 
                                     className="cart-checkout-txt">

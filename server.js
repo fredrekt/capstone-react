@@ -14,6 +14,9 @@ const account = require('./Routes/account')
 const medsitem = require('./Routes/medicineitem')
 const session = require('express-session'); 
 
+//clydex 
+const rateservice = require('./Routes/clydex/servicerating')
+
 //sort by ASC => Alphabetical 
 const sortbyA = require('./Routes/atoz')
 const sortCat = require('./Routes/Admin/categorychoices')
@@ -132,6 +135,9 @@ app.use('/update-stock',updateStock)
 
 //delete product
 app.use('/delete-product',deleteprod)
+
+//clydex 
+app.use('/rate-service',rateservice)
 
 //approve product
 

@@ -13,6 +13,7 @@ import ProductInventory from './components/ProductInventory';
 import Account from './components/Account';
 import UpdateStocks from './components/UpdateStocks';
 import RemoveProduct from './components/RemoveProduct';
+import Shipping from './components/Shipping'
 function App() {
   return (
     <BrowserRouter>
@@ -26,6 +27,7 @@ function App() {
             <Route path="/update-stocks" component={UpdateStocks} />
             <Route path="/account" component={Account} />
             <Route path="/remove-product" component={RemoveProduct} />
+            <Route path="/shipping" component={Shipping} />
             {/* <Route path="/login" component={Login}/> */}
           </Switch>
       </div>

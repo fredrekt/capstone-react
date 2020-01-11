@@ -6,6 +6,7 @@ import Breadcrumb from './Breadcrumb'
 
 class ContactComponent extends Component{
     render(){
+        document.title = "Contact Us"
         return(
             <div>
                 <Breadcrumb bheader="Contact Us" bcurrent="Contact"/>

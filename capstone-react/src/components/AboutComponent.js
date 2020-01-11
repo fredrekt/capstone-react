@@ -11,6 +11,7 @@ import ScrollButton from './ScrollButton'
 
 class AboutComponent extends Component{
     render(){
+        document.title = "About Medishop"
         return(
             <div>
                <Breadcrumb bheader="About Us" bcurrent="About"/>

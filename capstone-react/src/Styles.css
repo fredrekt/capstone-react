@@ -634,6 +634,11 @@ strong#nav-brand{
     margin-top: 10%;
     margin-bottom: 10%;
 }
+.sub-header-payments{
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: small;
+
+}
 /* Payment Method Component Ends */
 
 

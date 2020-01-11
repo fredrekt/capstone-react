@@ -8,6 +8,7 @@ import ScrollButton from './ScrollButton'
 
 class HomeComponent extends Component{
     render(){
+        document.title = "Welcome to Medishop"
         return(
             <div>
                 <Carousel/>

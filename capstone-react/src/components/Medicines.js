@@ -170,6 +170,7 @@ class Medicines extends Component{
 
 
     render(){
+        document.title = "Medicines for everyone"
         if(this.state.allmeds<=0){
             return (
                 <div>
@@ -383,6 +384,25 @@ class Medicines extends Component{
                                         </MDBView>
                                     </a>
                                 </MDBCol>
+
+                                {this.state.catmeds.map(categorymeds =>
+                                <MDBCol>
+                                    <a
+                                    key={categorymeds.med_id}
+                                    onClick={this.selectedCategoryDisplay(categorymeds.category)}>
+                                        <MDBView zoom>
+                                            <img
+                                            src={biogesic}
+                                            style={{'width':'100%'}}
+                                            alt=""
+                                            />
+                                            <MDBMask style={{'width':'100%'}} overlay="black-light">
+                                                <p className="white-text flex-center">{categorymeds.category}</p>
+                                            </MDBMask>
+                                        </MDBView>
+                                    </a>
+                                </MDBCol>
+                                )}
 {/*                           
                                 {this.state.catmeds.map(categorymeds =>
                                 <MDBCol>
@@ -403,7 +423,7 @@ class Medicines extends Component{
                                 </MDBCol>
                                 )} */}
 
-                                <MDBCol>
+                                {/* <MDBCol>
                                     <a
                                     onClick={this.selectedCategoryDisplay}>
                                         <MDBView zoom>
@@ -465,7 +485,7 @@ class Medicines extends Component{
                                             </MDBMask>
                                         </MDBView>
                                     </a>
-                                </MDBCol>
+                                </MDBCol> */}
 
 
                             </MDBRow>
