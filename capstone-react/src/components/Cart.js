@@ -249,7 +249,7 @@ class Cart extends Component{
                                     style={{'width':'400px'}} 
                                     size="md" 
                                     color="success"
-                                    onClick={this.gotoPayment}
+                                    onClick={this.toggle}
                                     >
                                     <h5 
                                     className="cart-checkout-txt">

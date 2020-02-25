@@ -5,6 +5,7 @@ import FeaturedItems from './FeaturedItems';
 import Navbar from '../Navbar'
 import Carousel from './Carousel'
 import ScrollButton from './ScrollButton'
+import ServiceRatings from './ServiceRatings';
 
 class HomeComponent extends Component{
     render(){
@@ -15,6 +16,7 @@ class HomeComponent extends Component{
                 <Jumbotron/>
                 <Features/>
                 <FeaturedItems/>
+                <ServiceRatings/>
                 <ScrollButton/>
             </div>
         )

@@ -16,6 +16,8 @@ const session = require('express-session');
 
 //clydex 
 const rateservice = require('./Routes/clydex/servicerating')
+const allrating = require('./Routes/clydex/displayrating')
+const avgrating = require('./Routes/clydex/displayratingoverall')
 
 //sort by ASC => Alphabetical 
 const sortbyA = require('./Routes/atoz')
@@ -138,6 +140,12 @@ app.use('/delete-product',deleteprod)
 
 //clydex 
 app.use('/rate-service',rateservice)
+
+//clydex display rating
+app.use('/service-ratings',allrating)
+
+//clydex all rating
+app.use('/overall-rating',avgrating)
 
 //approve product
 
