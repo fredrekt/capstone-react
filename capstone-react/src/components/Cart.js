@@ -136,6 +136,13 @@ class Cart extends Component{
             //debugging hehe
             console.log('rating: ',this.state.rating)
             console.log('comment: ',this.state.comment)
+            setTimeout(()=>{
+                this.toggle()
+               
+            },1000)
+            setTimeout(()=>{
+                window.alert('Service has been rated!')
+            },1200)
         }
 
         //payment options
