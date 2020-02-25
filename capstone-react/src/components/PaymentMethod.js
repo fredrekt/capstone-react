@@ -12,7 +12,8 @@ class PaymentMethod extends Component{
         super();
         this.state = {
           name: 'React',
-          display: 'none'
+          display: 'none',
+          price: null
         };
       }
     
@@ -21,6 +22,9 @@ class PaymentMethod extends Component{
           linear: false,
           animation: true
         })
+        fetch('/cart/cartTotalPrice')
+        .then(res=>res.json())
+        .then(price => this.setState({price}))
       }
     
       onSubmit(e) {
@@ -125,7 +129,7 @@ class PaymentMethod extends Component{
                                     <div class="form-group">
                                         <div id="pp-option" style={{'display': this.state.display}}>
                                             <MDBContainer className="text-center mt-3 mb-2">
-                                                <PaypalButton/>
+                                                <PaypalButton money={this.state.price}/>
                                             </MDBContainer>
                                         </div>
                                     <div id="cod-option" style={{'display':this.state.display}}>

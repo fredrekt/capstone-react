@@ -17,14 +17,13 @@ const notifySuccess = () => {
 }
 
 
-const PaypalButton = () =>{
+const PaypalButton = (props) =>{
 
   
     return(
       <div>
         <PayPalButton
-        currency="PHP"
-        amount="1780"
+        amount={props.money}
         onSuccess={(details, data) => {
           alert('Payment Successful')
           console.table(details)
@@ -38,6 +37,10 @@ const PaypalButton = () =>{
               orderId: data.orderID
             })
           });
+        }}
+        options={{
+          clientId: "Acz5mE6HeVd8kO23-q2wzZSDersEsTCGYJUdNt7m4HX9ZyON-zqKE5d846UafpMOLBZRkyqlnNC3sD6n",
+          currency: "PHP"
         }}
         style={{
           layout:  'vertical',
